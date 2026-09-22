@@ -22,7 +22,7 @@ export default {
   /* Kontaktní formulář se odesílá přes Web3Forms (web3forms.com, zdarma).
      Klíč se získá zadáním e-mailu na webu služby. Dokud je prázdný, formulář
      otevře předvyplněný e-mail. */
-  web3formsKey: "",
+  web3formsKey: "1dc9e42f-91e8-4f1c-acf6-a6cb7d00551b",
 
   phone: "728 271 819",
   phoneHref: "+420728271819",
