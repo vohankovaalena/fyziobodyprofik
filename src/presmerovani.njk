@@ -1,8 +1,8 @@
 ---
-# Duplicitní adresy z původního webu (WordPress je přesměrovával 301).
+# Staré adresy, které vedly na stejný obsah jako dnešní stránka.
 # GitHub Pages neumí serverové přesměrování, proto se na staré adrese vytvoří
 # stránka s okamžitým meta refresh a kanonickou adresou. Google to bere jako
-# trvalé přesměrování.
+# trvalé přesměrování (301).
 # Seznam je v _data/presmerovani.json.
 pagination:
   data: presmerovani
@@ -18,10 +18,10 @@ eleventyExcludeFromCollections: true
 <meta charset="utf-8">
 <title>Přesměrování | {{ site.name }}</title>
 <link rel="canonical" href="{{ site.url }}{{ r.na }}">
-<meta http-equiv="refresh" content="0; url={{ site.url }}{{ r.na }}">
-<script>location.replace({{ (site.url + r.na) | dump | safe }})</script>
+<meta http-equiv="refresh" content="0; url={{ r.na | cesta }}">
+<script>location.replace({{ (r.na | cesta) | dump | safe }})</script>
 </head>
 <body>
-<p>Stránka se přesunula na <a href="{{ site.url }}{{ r.na }}">{{ site.url }}{{ r.na }}</a>.</p>
+<p>Stránka se přesunula na <a href="{{ r.na | cesta }}">{{ site.url }}{{ r.na }}</a>.</p>
 </body>
 </html>

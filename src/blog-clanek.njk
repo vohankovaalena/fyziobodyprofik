@@ -37,8 +37,8 @@ eleventyComputed:
         {% include "clanky/" + clanek.slug + ".njk" %}
       </div>
       <nav class="article-nav" aria-label="Další články">
-        {%- if starsi %}<a class="article-nav__prev" href="{{ starsi.adresa }}">← {{ starsi.nadpis }}</a>{% endif %}
-        {%- if novejsi %}<a class="article-nav__next" href="{{ novejsi.adresa }}">{{ novejsi.nadpis }} →</a>{% endif %}
+        {%- if starsi %}<a class="article-nav__prev" href="{{ starsi.adresa | cesta }}">← {{ starsi.nadpis }}</a>{% endif %}
+        {%- if novejsi %}<a class="article-nav__next" href="{{ novejsi.adresa | cesta }}">{{ novejsi.nadpis }} →</a>{% endif %}
       </nav>
     </div>
   </div>
@@ -50,9 +50,9 @@ eleventyComputed:
     <ul class="latest__grid" role="list">
       {%- for c in ostatni %}
       <li class="latest-card">
-        <a href="{{ c.adresa }}" tabindex="-1" aria-hidden="true">{{ picture(c.foto, "") }}</a>
+        <a href="{{ c.adresa | cesta }}" tabindex="-1" aria-hidden="true">{{ picture(c.foto, "") }}</a>
         <div class="latest-card__body">
-          <h3 class="latest-card__title"><a href="{{ c.adresa }}">{{ c.nadpis }}</a></h3>
+          <h3 class="latest-card__title"><a href="{{ c.adresa | cesta }}">{{ c.nadpis }}</a></h3>
           <p>{{ c.perex | truncate(110) }}</p>
         </div>
       </li>

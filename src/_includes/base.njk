@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 {% include "seo.njk" %}
 <meta name="theme-color" content="#3f7e70">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ "/assets/favicon.svg" | cesta }}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="stylesheet" href="{{ "/assets/css/style.css" | cesta }}">
 </head>
 <body{% if theme %} data-theme="{{ theme }}"{% endif %}>
 <a class="skip-link" href="#obsah">Přeskočit na obsah</a>
@@ -40,9 +40,9 @@
 
 <header class="site-header">
   <div class="site-header__inner">
-    <a class="logo" href="/" aria-label="{{ site.name }}: domovská stránka">
-      <img class="logo__mark" src="/assets/img/logo-mark.png" alt="" width="187" height="186">
-      <img class="logo__text" src="/assets/img/logo-text.png" alt="" width="320" height="138">
+    <a class="logo" href="{{ "/" | cesta }}" aria-label="{{ site.name }}: domovská stránka">
+      <img class="logo__mark" src="{{ "/assets/img/logo-mark.png" | cesta }}" alt="" width="187" height="186">
+      <img class="logo__text" src="{{ "/assets/img/logo-text.png" | cesta }}" alt="" width="320" height="138">
     </a>
 
     <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="hlavni-menu">
@@ -63,12 +63,12 @@
           </button>
           <ul class="nav__sub">
             {%- for child in item.children %}
-            <li><a class="nav__sublink" href="{{ child.href }}"{% if page.url == child.href %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
+            <li><a class="nav__sublink" href="{{ child.href | cesta }}"{% if page.url == child.href %} aria-current="page"{% endif %}>{{ child.label }}</a></li>
             {%- endfor %}
           </ul>
         </li>
         {%- else %}
-        <li class="nav__item"><a class="nav__link" href="{{ item.href }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
+        <li class="nav__item"><a class="nav__link" href="{{ item.href | cesta }}"{% if page.url == item.href %} aria-current="page"{% endif %}>{{ item.label }}</a></li>
         {%- endif %}
         {%- endfor %}
       </ul>
@@ -101,7 +101,7 @@
       <h2 class="site-footer__title">Rozcestník</h2>
       <ul class="site-footer__links">
         {%- for item in rozcestnik %}
-        <li><a href="{{ item.href }}">{{ item.label }}</a></li>
+        <li><a href="{{ item.href | cesta }}">{{ item.label }}</a></li>
         {%- endfor %}
       </ul>
     </div>
@@ -122,6 +122,6 @@
   </div>
 </footer>
 
-<script src="/assets/js/main.js" defer></script>
+<script src="{{ "/assets/js/main.js" | cesta }}" defer></script>
 </body>
 </html>

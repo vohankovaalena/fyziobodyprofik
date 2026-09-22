@@ -30,7 +30,7 @@ ogTitle: "Fyzio Body Prof.I.K – fyzioterapie a zdravý pohyb v Příbrami"
   <a class="tile" href="{{ site.reservio.terapie }}" data-reservio="terapie">
     <svg class="icon" aria-hidden="true"><use href="#i-lotus"/></svg><span>Objednat terapii</span>
   </a>
-  <a class="tile" href="/aktuality/">
+  <a class="tile" href="{{ "/aktuality/" | cesta }}">
     <svg class="icon" aria-hidden="true"><use href="#i-megaphone"/></svg><span>Aktuality</span>
   </a>
   <a class="tile tile--accent" href="#rozvrh">
@@ -44,7 +44,7 @@ ogTitle: "Fyzio Body Prof.I.K – fyzioterapie a zdravý pohyb v Příbrami"
       <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
     </button>
     <div class="news__body">
-      <h2 class="news__title" id="aktuality-nadpis"><a href="/aktuality/">Aktuálně</a></h2>
+      <h2 class="news__title" id="aktuality-nadpis"><a href="{{ "/aktuality/" | cesta }}">Aktuálně</a></h2>
       <ul class="news__list" role="list">
         {#- Všechny aktuality ze stránky Aktuality, střídají se po 5 s. Text je „nadpis – podtitul“,
             pokud aktualita nemá vlastní krátký text v poli „kratce“. -#}
@@ -74,7 +74,7 @@ ogTitle: "Fyzio Body Prof.I.K – fyzioterapie a zdravý pohyb v Příbrami"
           <div class="service-card__body">
             {{ s.text | safe }}
             <p class="service-card__links">
-              {%- if s.href %}<a class="more" href="{{ s.href }}">{{ s.hrefLabel or "Zjistit více" }}</a>{% endif %}
+              {%- if s.href %}<a class="more" href="{{ s.href | cesta }}">{{ s.hrefLabel or "Zjistit více" }}</a>{% endif %}
               {%- if s.objednat %}<a class="more" href="{{ site.reservio.terapie }}" data-reservio="terapie">Objednat se</a>{% endif %}
             </p>
           </div>
@@ -105,8 +105,10 @@ ogTitle: "Fyzio Body Prof.I.K – fyzioterapie a zdravý pohyb v Příbrami"
           <span class="lekce__cas">{{ l.od }} – {{ l.do }}</span>
         </div>
         {%- else %}
+        {#- Proklik na lekci: vlastní „odkaz“ lekce, jinak stránka lektora, jinak Reservio. -#}
+        {%- set odkaz = l.odkaz or rozvrh.odkazy[l.lektor] or "reservio" %}
         <div class="lekce lekce--{{ rozvrh.barvy[l.lektor] or 'rose' }}" style="grid-row: {{ radek(l.od) }} / {{ radek(l.do) }}">
-          <strong>{{ l.nazev }}</strong>
+          <strong><a href="{{ site.reservio.cviceni if odkaz == "reservio" else odkaz }}"{% if odkaz == "reservio" %} data-reservio="cviceni"{% endif %} target="_blank" rel="noopener">{{ l.nazev }}</a></strong>
           <span class="lekce__cas">{{ l.od }} – {{ l.do }}</span>
           <span class="lekce__lektor">{{ l.lektor }}</span>
         </div>

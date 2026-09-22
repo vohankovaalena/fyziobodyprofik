@@ -647,6 +647,9 @@ strong { font-weight: 600; }
   color: rgb(0 0 0 / 0.6);
 }
 .lekce strong { font-size: 0.8rem; color: rgb(0 0 0 / 0.78); font-weight: 600; }
+/* Název lekce vede na rezervaci nebo web lektora – barvu si bere z bloku. */
+.lekce strong a { color: inherit; text-decoration: underline; text-decoration-color: rgb(0 0 0 / 0.25); text-underline-offset: 0.15em; }
+.lekce strong a:hover, .lekce strong a:focus-visible { text-decoration-color: currentColor; }
 .lekce--mustard { background: var(--l-mustard); }
 .lekce--pink { background: var(--l-pink); }
 .lekce--rose { background: var(--l-rose); }

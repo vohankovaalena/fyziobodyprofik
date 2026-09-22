@@ -8,8 +8,8 @@
 {% macro picture(name, alt, cls="", eager=false) %}
 {%- set dim = img[name] -%}
 <picture>
-  <source type="image/webp" srcset="/assets/img/{{ name }}.webp">
-  <img class="{{ cls }}" src="/assets/img/{{ name }}.jpg" alt="{{ alt }}" width="{{ dim[0] }}" height="{{ dim[1] }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+  <source type="image/webp" srcset="{{ ("/assets/img/" + name + ".webp") | cesta }}">
+  <img class="{{ cls }}" src="{{ ("/assets/img/" + name + ".jpg") | cesta }}" alt="{{ alt }}" width="{{ dim[0] }}" height="{{ dim[1] }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
 </picture>
 {%- endmacro %}
 

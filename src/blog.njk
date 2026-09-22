@@ -16,11 +16,11 @@ drobecek: "Blog"
     <ul class="posts" role="list">
       {%- for c in blog %}
       <li class="post-card">
-        <a class="post-card__media" href="{{ c.adresa }}" tabindex="-1" aria-hidden="true">{{ picture(c.foto, "") }}</a>
+        <a class="post-card__media" href="{{ c.adresa | cesta }}" tabindex="-1" aria-hidden="true">{{ picture(c.foto, "") }}</a>
         <div class="post-card__body">
-          <h2 class="post-card__title"><a href="{{ c.adresa }}">{{ c.nadpis }}</a></h2>
+          <h2 class="post-card__title"><a href="{{ c.adresa | cesta }}">{{ c.nadpis }}</a></h2>
           <p>{{ c.perex }}</p>
-          <a class="more" href="{{ c.adresa }}">Číst více<span class="visually-hidden">: {{ c.nadpis }}</span></a>
+          <a class="more" href="{{ c.adresa | cesta }}">Číst více<span class="visually-hidden">: {{ c.nadpis }}</span></a>
         </div>
       </li>
       {%- endfor %}

@@ -1,5 +1,5 @@
 {
-  "poznamka": "Časy ve tvaru H:MM. Rozvrh pokrývá 8:30–12:00 a 16:00–21:00 (po čtvrthodinách). Barva lekce se bere podle lektora (klíč v 'barvy'), 'obsazeno: true' vykreslí šedý blok.",
+  "poznamka": "Časy ve tvaru H:MM. Rozvrh pokrývá 8:30–12:00 a 16:00–21:00 (po čtvrthodinách). Barva lekce se bere podle lektora (klíč v 'barvy'), 'obsazeno: true' vykreslí šedý blok. Název lekce je proklik: cíl se bere podle lektora z 'odkazy', bez záznamu vede na Reservio; jednotlivá lekce může mít vlastní 'odkaz' (URL nebo 'reservio').",
   "barvy": {
     "Wážky": "mustard",
     "Jana": "pink",
@@ -10,6 +10,11 @@
     "Péťa": "lavender",
     "Zuzka": "blue",
     "Maky": "tan"
+  },
+  "odkazy": {
+    "Wážky": "https://www.wazky.com",
+    "Jana": "https://www.tanecni-rs.cz/kurz/lady-latino/",
+    "Vendy": "https://zenamu.com/cs/"
   },
   "dny": [
     { "nazev": "Pondělí", "lekce": [
