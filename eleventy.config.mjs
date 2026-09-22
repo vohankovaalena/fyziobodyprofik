@@ -3,6 +3,9 @@ export default function (eleventyConfig) {
      assets/sil a favicon. Cesty ve stylopisu i v HTML tak zůstávají platné. */
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
+  /* Vlastní doména pro GitHub Pages — soubor CNAME musí být v kořeni webu. */
+  eleventyConfig.addPassthroughCopy({ "src/CNAME": "CNAME" });
+
   /* Při úpravě stylů nebo skriptu se prohlížeč obnoví i bez přestavby. */
   eleventyConfig.addWatchTarget("src/assets/css/");
   eleventyConfig.addWatchTarget("src/assets/js/");
