@@ -1,0 +1,14 @@
+[
+  { "prezdivka": "Ivka", "jmeno": "Mgr. Ivana Cízová", "funkce": "fyzioterapeutka", "foto": "tym-ivka",
+    "text": "Ahoj, jmenuji se Ivka a jsem fyzioterapeutka. Mojí specializací je pohybový aparát, tedy všechny vaše bolístky ať už akutní nebo chronické. Vedu fyziotrénink a SM systém. Dále se zabývám zdravým životním stylem a efektivním hubnutím. No prostě život je pohyb a pohyb je život 😊 Všechno se propojuje." },
+  { "prezdivka": "Karol", "jmeno": "Bc. Karolína Uhlíř", "funkce": "fyzioterapeutka", "foto": "tym-karol",
+    "text": "Ahoj, já jsem Karolína… Jsem absolventkou bakalářského studia fyzioterapie v Plzni, po té jsem 12 let pracovala jako fyzioterapeut v Oblastní nemocnici Příbram. V terapiích propojuji cestu funkční fyzioterapie a alternativní způsoby léčby jako je např. kraniosakrální terapie. Snažím se o co nejkomplexnější přístup ke svým klientům." },
+  { "prezdivka": "Péťa", "jmeno": "Petra Chlumecká", "funkce": "masérka", "foto": "tym-peta",
+    "text": "Ahojky, já jsem Peťa, studovala jsem střední Zdravotnickou školu v oboru Masér sportovní a rekondiční. Nejvíce se věnuji, jak já říkám „rekondičním masážím“, snažím řešit problémy pohybového systému a zároveň mám certifikát na Dornovu metodu a na těhotenské masáže. Pokud si ale chcete jen odpočinout, tak relaxační masáž je velmi příjemný způsob oddychu. Zkrátka ráda pomůžu, ať už od bolesti či únavy." },
+  { "prezdivka": "Danča", "jmeno": "Dana Černohorská", "funkce": "masérka", "foto": "tym-danca",
+    "text": "Ahoj, já jsem Danča, zajímám se a baví mě masáže a sport. Jelikož se doma věnujeme především sportu, zdravému pohybu a regeneraci, tak jsem absolvovala kurz sportovních, klasických a relaxačních masáží. U nás ve Fyziobody PROFIK působím především v oblasti masáží, maderoterapie a body wrapu. Těším se na osobní setkání a pomoc s Vaší regenerací či odpočinkem." },
+  { "prezdivka": "Míša", "jmeno": "Michael Macek", "funkce": "lektor SM systému", "foto": "tym-misa",
+    "text": "U nás ve Fyzio Body Prof.I.K působím jako lektor SM systému. Kromě kurzů nabízím také individuální lekce nebo small group." },
+  { "prezdivka": "Ľubo", "jmeno": "Bc. Ľubomír Bičej DiS.", "funkce": "dětský fyzioterapeut", "foto": "tym-lubo",
+    "text": "Ahoj, jmenuji se, Ľubo… Absolvoval jsem studium fyzioterapie na Slovensku a studium aplikovaných pohybových aktivit na FTVS UK. Pracuji 18 let jako dětský fyzioterapeut. Propojuji prvky Bobath konceptu, bazálních programů a PNF konceptu. Zajímá mě práce s kompenzačními a ortotickými pomůckami. Rád poradím s terapií v domácím prostředí." }
+]

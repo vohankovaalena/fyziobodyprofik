@@ -1,0 +1,156 @@
+---
+title: "Masáže, maderka, bodywraps Příbram | Fyzio Body Prof.I.K"
+description: "Masáže, těhotenské masáže, maderoterapie, lymfomodeling, bodywraps a samoopalovací nástřik v Příbrami. Studio Fyzio Body Profik, Školní 144."
+theme: "body"
+drobecek: "Body služby"
+---
+{% from "components/ui.njk" import picture, service, accordion, reservio with context %}
+{% set karty = [
+  ["masaze", "masaze", "Masáže"],
+  ["maderoterapie", "maderoterapie", "Maderoterapie"],
+  ["lymfomodeling", "lymfomodeling", "Lymfomodeling"],
+  ["bodywraps", "bodywraps-produkt", "Bodywraps"],
+  ["samoopalovani", "samoopalovani", "Samoopalovací nástřik"]
+] %}
+
+<section class="page-hero">
+  {{ picture("body-hero", "", "page-hero__bg", true) }}
+  <div class="wrap page-hero__inner stack">
+    <h1 class="page-hero__title">Body služby</h1>
+    <p class="page-hero__sub">Masáže Příbram</p>
+    <p>{{ reservio("terapie", "Rezervace online") }}</p>
+  </div>
+</section>
+
+<section class="cards-panel" aria-label="Přehled body služeb">
+  <ul class="cards-panel__grid" role="list">
+    {%- for k in karty %}
+    <li>
+      <a class="photo-card" href="#{{ k[0] }}">
+        {{ picture(k[1], "") }}
+        <span class="photo-card__label">{{ k[2] }}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+{% call service("masaze", "Masáže", "masaze", "Masérka masíruje obličej a krk klientky", "Příbram") %}
+<p>Nabízíme různé druhy masáží: klasickou, sportovní, relaxační, těhotenskou, masáž lávovými kameny a jiné. Kterou si vyberete vy?</p>
+<div class="accordions">
+{% call accordion("Klasická masáž") %}
+<p>Klasická masáž, to je ruční aplikace cílených mechanických podnětů, tzv. hmatů, které obsahují nejen úkony hnětací (tření, vytírání a roztírání a hnětení), ale i úkony nárazové (tepání a chvění). Je nejčastěji používaným druhem masáže. Využívá se především jako masáž léčebná a na doléčení prodělaných onemocnění.</p>
+<p>Také se velmi účinně využívá jako preventivní prostředek proti vzniku mnoha, častokrát vážných onemocnění páteře, ale i jiných orgánů těla. Je velmi vhodná u chronických bolestivých stavů, kde napomáhá uvolnění bolestivých spazmů a blokád vzniklých v důsledku různých úrazů a přetěžování organismu. Velký význam má i při relaxačních technikách.</p>
+{% endcall %}
+{% call accordion("Sportovní masáž") %}
+<p>Sportovní masáž vychází z masáže klasické, má ovšem svá specifika, kterými se od klasické masáže liší.</p>
+<p>Sportovní masáž dokáže sportovce fyzicky i psychicky připravit na sportovní výkon nebo naopak po zátěži zklidnit organismus a zrychlit regeneraci měkkých tkání. V rámci návštěvy Vám doporučujeme poradit se s terapeutem, jaké je Vaše očekávání.</p>
+<p>Také se velmi účinně využívá jako preventivní prostředek proti vzniku mnoha, častokrát vážných onemocnění páteře, ale i jiných orgánů těla. Je velmi vhodná u chronických bolestivých stavů, kde napomáhá uvolnění bolestivých spazmů a blokád vzniklých v důsledku různých úrazů a přetěžování organismu. Velký význam má i při relaxačních technikách.</p>
+{% endcall %}
+{% call accordion("Manuální lymfatická masáž") %}
+<p>Lymfodrenáž je druh jemné techniky, která pomáhá rozproudit mízní systém, a tak podporuje tok lymfy. Tím dochází k odstraňování škodlivin – toxických látek. Odlehčí vašemu miznímu systému a současně napomáhá regeneraci organismu. Provádí se na sucho, musí být vždy jemná, a NIKDY nesmí bolet!</p>
+<p>Mezi hlavní indikace patří otoky (s vyjímkou otoků souvisejících s chorobami srdce, ledvin nebo jater), celulitida, detoxikace organismu, pocit těžkých nohou, poúrazové a pooperační stavy, aj.</p>
+<p>Kdy není vhodná lymfodrenáž? V případě, že máte virózu, chřipku, zvýšenou teplotu, „jen“ rýmu, kašel či cítíte, že na vás „leze“ chřipka.</p>
+<p>Dalším negativním faktorem je jakékoli infekční či akutně probíhající onemocnění či zánět kdekoliv v těle. Neprovádí se při užívání antibiotik a protizánětlivých léků, léků na ředění krve či při onemocnění krve, nevhodné jsou i do 3 měsíce gravidity a při kojení a mnoho dalších. Konzultujte prosím svůj stav se zkušeným lymfoterapeutem popř. svým ošetřujícím lékařem.</p>
+{% endcall %}
+{% call accordion("Těhotenská masáž") %}
+<p>Těhotenství je speciální období a každá maminka si zaslouží speciální péči. Masáž pomáhá těhotným ženám lépe se adaptovat na změny probíhajícími v jejich těle, překonávat napětí, únavu a stres. Zároveň přináší hloubkovou relaxaci. Miminko v bříšku je přímo napojené na svou maminku a dobře vnímá její rozpoložení. Masáž, při níž si maminka důkladně odpočine, tedy velmi prospívá nejen jí, ale i miminku. Pokud si maminka během těhotenství dopřává pravidelně kvalitní péči a těhotenství probíhá v pohodě, buduje se pevný základ pro zvládnutí porodu a následné péče o novorozené miminko.</p>
+<p>Těhotenská masáž je celotělová relaxační masáž, při níž využíváme speciálních jemných hmatů. Nastávající maminka během masáže zaujímá polohy v sedě a v leže na boku a na zádech s vypodložením hlavy, bříška a dolních končetin. Masáž ulevuje od bolesti zad, kloubů a svalů, která u těhotných vzniká následkem změny těžiště těla. Jemné hmaty pomáhají od oteklých dolních končetin, bojují proti únavě, uvolňují fyzický i psychický stres. Zlepšuje držení těla a blahodárně působí na pokožku.</p>
+{% endcall %}
+{% call accordion("Masáž lávovými kameny") %}
+<p>Královna masáží, tak by se dal nazvat tento druh masáže. Tato technika pochází z Havaje a svým regeneračním a velmi relaxačním účinkem dokáže uspokojit i ty nejnáročnější klienty. Při této masáži se používají speciální vyhlazené lávové kameny ohřáté na teplotu kolem 55 °C.</p>
+<p>Nahřáté lávové kameny zlepšují prokrvení, postupným prohříváním celého těla stimulují krevní oběh, to dále ovlivní tkáně, uvolní se svalové napětí, dojde k regeneraci namožených svalů a povolí se zablokovaná místa. Lávové kameny také ovlivňují energetické dráhy v těle, pozitivně působí na vegetativní nervový systém, mají velmi blahodárný účinek na psychiku a mysl, uvolňují stres, zlepšují schopnost koncentrace, harmonizují tělo a zlepšují spánek.</p>
+<p><strong>Kdy není tato masáž vhodná:</strong></p>
+<ul>
+  <li>při horečnatých a infekčních onemocněních</li>
+  <li>u veškerých onemocnění kůže (záněty, poranění, sluneční popáleniny, otevřené rány a modřiny,…)</li>
+  <li>v těhotenství (dochází k velkému prokrvení)</li>
+  <li>pokud trpíte závažným srdečním onemocněním nebo máte vysoký krevní tlak</li>
+  <li>při zhoršené kožní citlivosti, především zhoršené vnímání tepla (hypersenzitivita)</li>
+  <li>u nádorových onemocnění</li>
+  <li>při křečových žilách</li>
+</ul>
+{% endcall %}
+</div>
+<p class="center">{{ reservio("terapie") }}</p>
+{% endcall %}
+
+{% call service("maderoterapie", "Maderoterapie", "maderoterapie", "Maderoterapie obličeje dřevěným nástrojem", "", true) %}
+<p><strong>Maderoterapie</strong> je speciální masážní technika, při které se používají ergonomicky tvarované <strong>dřevěné válečky a nástroje</strong>. Tato metoda má původ v Kolumbii a její účinky si dnes získávají oblibu i v České republice – včetně <strong>Příbrami</strong>.</p>
+<p>V našem studiu kombinujeme <strong>maderoterapii s prvky fyzioterapie a manuální techniky</strong>, takže nejen podporujeme <strong>odbourávání celulitidy a formování postavy</strong>, ale také <strong>uvolňujeme napětí ve svalech</strong> a zlepšujeme <strong>látkovou výměnu</strong>.</p>
+<div class="accordions">
+{% call accordion("Klasická maderoterapie") %}
+<ul>
+  <li>Zahrnuje řadu dynamických hmatů, které se provádí pomocí různých dřevěných pomůcek.</li>
+  <li>Při této masáži, se dané místo prokrví a tím se urychlí látková výměna.</li>
+  <li>Dochází také k jemné stimulaci lymfatického systému, čímž se uvolní nahromaděné toxiny.</li>
+  <li>Tělo se zbaví nerovností v podkoží a tím se zmírní efekt ošklivé pomerančové kůže zvané celulitida.</li>
+</ul>
+{% endcall %}
+{% call accordion("Brazilská maderoterapie") %}
+<p>Brazilská maderoterapie je masážní technika, kterou pomáháme ke tvarování postavy. Speciálními masážními tahy můžeme dosáhnout kulatého, pevného zadečku a úzkého pasu. Proto se jí říká brazilská. V neposlední řadě touto masáží můžeme také příznivě ovlivnit celulitidu, prokrvení podkoží a lymfatický systém.</p>
+<p>Masáž se provádí dřevěnými zvony, ty mají různou velikost, aby se přizpůsobili tělu každého klienta. Přiložení zvonu vytváříme lehký podtlak, kterým lehce stimulujeme lymfu. Lymfatický systém pak odvede přebytečnou vody, odpadní látky a toxiny z těla.</p>
+<p>Na rozdíl od klasické maderoterapie se díky podtlaku dokážeme dostat do hlubší vrstvy tkáně. Tak můžeme ovlivnit buňky zevnitř. Proto je vidět zásadní rozdíl po každé kůře brazilské maderoterapie, která trvá 75–80 minut. Za tento čas zvládneme ošetřit celé nohy, zadek a břicho. Používáme (dle tolerance klienta) skořicový olej, který příjemně prokrví a nastimuluje kůži.</p>
+{% endcall %}
+{% call accordion("Maderoterapie obličeje") %}
+<p>Úžasná technika, která vám během chvilky rozzáří obličej, sníží hloubku vrásek, zjemní pokožku, stáhne dvojitou bradu a konturuje celý obličej. Navíc je velmi relaxační, takže vám zharmonizuje mysl a odstraní napětí.</p>
+<ul>
+  <li>Její tajemství je ve 4 speciálně navržených dřevěných prvcích, válečcích, které: stimulují produkci elastinu a kolagenu</li>
+  <li>zlepšují krevní oběh</li>
+  <li>zpevňují a tonizují pokožku</li>
+  <li>tvarují obličej a také krk.</li>
+</ul>
+<p>Maderoterapie trvá 30 minut nebo ji můžete kombinovat s jinou procedurou, např. ke klasické maderoterapii těla nebo jako závěrečnou relaxační část u Bodywraps zábalu.</p>
+<p>Konečným výsledkem je omlazená a pevnější pokožka.</p>
+{% endcall %}
+</div>
+<p class="center">{{ reservio("terapie") }}</p>
+{% endcall %}
+
+{% call service("bodywraps", "Bodywraps", "bodywraps", "Zábal těla do bandáže při proceduře bodywraps", "Masáže Příbram") %}
+<p>Body wraps je speciální zábal, který napomáhá zeštíhlení postavy, zpevnění pokožky, detoxikaci a odplavení přebytečné vody ven z těla. Již po prvním zábalu můžeme zaznamenat úbytek 5–30 cm v celkovém obvodu těla na devíti měřených místech. Body wraps stimuluje lymfatický systém, to způsobí tento efekt.</p>
+<p>Při proceduře používáme speciální směs jílů, aloe vera a karnitinu, která se nanáší přímo na tělo klienta. Tahle směs snižuje hromadění lipidů v tukových buňkách, stimuluje úbytek stávajícího tuku a to vede k výraznému zmenšení objemu břicha. Body wraps také remineralizuje, očišťuje a hydratuje kůži. Před samotným zábalem vám ošetříme lymfatické uzliny, následně vás natřeme směsí, zabalíme do krátkotažných bandáží a speciálního termoobleku. Další 15–30 minut strávíte na orbitreku, dle vaší výkonnosti. Následuje závěrečná relaxace. Jedna kúra trvá 90–120 minut.</p>
+<p class="center">{{ reservio("terapie", "Objednat na terapii") }}</p>
+{% endcall %}
+
+{% call service("samoopalovani", "Samoopalovací nástřik", "samoopalovani", "Opálená žena v plavkách na pláži", "", true) %}
+<p>Pokud toužíte po krásném bronzovém opálení, tak je samoopalovací nástřik skvělou volbou. Díky nové technologii poskytuje nástřik dlouhotrvající a přirozeně vypadající opálení. Aplikace se provádí Airbrush tlakovou pistolí, barva nestéká, nelepí a má dokonalý výsledný odstín v podobě přirozeně vypadajícího bronzového opálení. Má extra hydratační složení přidáním arganového a avokádového oleje a zvlhčujícími složkami: Isopentydol, Pentavitin, Glycerin a Aloe Vera. Je určený pro aplikaci na tvář a tělo. Je absolutně bez barviv, které by mohly způsobit oranžový efekt. Bez parabenů, chem. konzervačních látek, vegan.</p>
+<div class="accordions">
+{% call accordion("Před nástřikem") %}
+<ul>
+  <li>Je vhodné udělat si celotělový peeling, peelingovou rukavicí (bez mýdlových, hydratačních a olejových složek!)</li>
+  <li>Pleť by měla být odlíčená, pokožka bez deodorantu, parfému, hydratačního krému</li>
+  <li>Pět dní před aplikací nástřiku by neměly být použitý jiné samoopalovací přípravky</li>
+  <li>Odstranění chlupů by mělo být do 24–48 hod před aplikací</li>
+  <li>Na proceduru přijďte v tmavém volném oblečení, přebytečná barva může obarvit povlečení, ale je na bázi vody, takže jde vyprat a nezanechává skvrny</li>
+  <li>Pokud máte citlivou pokožku a nemáte zkušenost se samoopalovacími přípravky, je možné udělat test na kousku kůže 24 hod před procedurou</li>
+</ul>
+{% endcall %}
+{% call accordion("Po nástřiku") %}
+<p>Zabraňte kontaktu s vodou 1–6–8 hod podle typu samoopalovacího nástřiku (v tomto čase pronikají složky do pokožky).</p>
+<ul>
+  <li>V tomto čase nesportujte, nedělejte činnosti při kterých dochází k nadměrnému pocení</li>
+  <li>V době působení noste volnější, tmavé oblečení, nepoužívejte parfém, ani deodorant</li>
+  <li>Nedotýkejte se povrchu pokožky, mohlo by to způsobit skvrny na prstech</li>
+</ul>
+{% endcall %}
+{% call accordion("Do uplynutí doby působení") %}
+<ul>
+  <li>Dejte si vlažnou, ne horkou sprchu (neděste se, vypadá to, že se celá barva smyla)</li>
+  <li>Nepoužívejte žádné žínky, peelingy a zbytečně kůži nedřete, aby nevznikala světlá místa</li>
+  <li>Výsledné opálení se rozvine 24 hod po nástřiku – v tomto čase omezte saunování, kosmetiku, plavání</li>
+  <li>Pro udržení dokonalého opálení co dlouho vydrží je důležitá hydratace po každé sprše</li>
+  <li>V závislosti na životním stylu a starostlivosti o opálení vydrží barva 7–10 dní</li>
+  <li>Aplikace není vhodná pokud máte ekzematickou mokvající kůži.</li>
+</ul>
+<p>Je vhodná pro těhotné i kojící ženy.<br>Požadovaného odstínu dosáhnete jen dodržením uvedeného způsobu aplikace a přípravou pokožky.<br>Pracujeme se samoopalovacími přípravky značky HE-SHi.</p>
+{% endcall %}
+</div>
+<p>{{ reservio("terapie") }}</p>
+{% endcall %}
+
+{% call service("lymfomodeling", "Lymfomodeling", "lymfomodeling", "Lymfatická masáž nohou", "Již brzy u nás ve studiu") %}
+<p>Lymfomodeling je inovativní metoda manuální stimulace lymfatického systému, která spojuje různé techniky lymfodrenáže s prvky modelace postavy. Tato metoda nejenže podporuje odvodnění organismu a detoxikaci, ale také pomáhá tvarovat postavu, redukovat celulitidu a zlepšit prokrvení pokožky. Díky intenzivním, rytmickým a dynamickým pohybům dochází k efektivnějšímu odvodu přebytečných tekutin a toxinů z těla než u klasické lymfodrenáže.</p>
+<p>Lymfomodeling je vhodný jak pro estetické, tak pro zdravotní účely a nachází využití u lidí s otoky, po operacích, při regeneraci po sportovních výkonech nebo jako podpora při hubnutí a formování postavy.</p>
+<p class="center">{{ reservio("terapie", "Objednat na terapii") }}</p>
+{% endcall %}

@@ -1,0 +1,71 @@
+---
+permalink: "/fyzioterapeuti-pribram/"
+title: "Fyzioterapeuti Příbram | Fyzio Body Prof.I.K"
+description: "Fyzioterapeuti Příbram – seznamte se s týmem studia Fyzio Body Profik. Odborná fyzioterapie, dětská fyzioterapie, masáže a zdravé cvičení s laskavým přístupem."
+drobecek: "O nás"
+---
+{% from "components/ui.njk" import picture, reservio with context %}
+
+<section class="band-hero">
+  <div class="wrap">
+    <h1 class="band-hero__title">Náš tým</h1>
+    <p class="band-hero__sub">Fyzioterapeuti Příbram</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap split">
+    <div class="split__media">{{ picture("tym", "Tým studia Fyzio Body Prof.I.K v cvičebním sále", "rounded", true) }}</div>
+    <div class="stack">
+      <h2 class="h-section">O nás</h2>
+      <p>Studio Fyzio Body Profik spojuje profesionální přístup zkušených fyzioterapeutů s příjemným místem pro relaxaci. Naším posláním je nabídnout komplexní péči o tělo i duši – propojení <strong>moderní fyzio terapie, zdravého cvičení</strong> a <strong>relaxačních wellness procedur</strong>. V Příbrami jsme vytvořily místo, kde najdete odbornou pomoc, ale i příjemné prostředí a laskavý přístup. Studio Fyzio Body Profik je místem, kam se budete rádi vracet.</p>
+      <h3 class="h-sub">Co u nás najdete?</h3>
+      <ul class="icon-list" role="list">
+        <li><svg class="icon" aria-hidden="true"><use href="#i-run"/></svg>Fyzioterapie pod vedením odborníků</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-lotus"/></svg>Regenerační a relaxační masáže</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-roller"/></svg>Oblíbené bodywraps a maderoterapie</li>
+        <li><svg class="icon" aria-hidden="true"><use href="#i-dumbbell"/></svg>Široký výběr skupinového cvičení v moderním sále</li>
+      </ul>
+      <p>Náš tým v <strong>Fyzio Body Profik</strong> je tu pro vás, ať už řešíte bolesti zad, problémy s pohybovým aparátem, nebo hledáte místo pro odpočinek a laskavou <strong>péči</strong>. S námi se můžete cítit lépe – <strong>zdravěji, silněji a klidněji.</strong></p>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight-top" aria-labelledby="tym-nadpis">
+  <div class="wrap">
+    <h2 class="h-section" id="tym-nadpis">Náš tým</h2>
+    <ul class="team" role="list">
+      {%- for clen in tym %}
+      <li class="team-card">
+        {{ picture(clen.foto, clen.jmeno, "team-card__photo") }}
+        <h3 class="team-card__name">„{{ clen.prezdivka }}“ – {{ clen.jmeno }}</h3>
+        <p>{{ clen.text }}</p>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--white" aria-labelledby="galerie-nadpis">
+  <div class="wrap">
+    <h2 class="h-section" id="galerie-nadpis">Jak to u nás vypadá</h2>
+    <figure class="gallery">
+      {{ picture("studio-sal", "Cvičební sál studia s podložkami, míči a zrcadly", "rounded") }}
+    </figure>
+  </div>
+</section>
+
+<section class="section section--white section--tight-top" aria-labelledby="recenze-nadpis">
+  <div class="wrap">
+    <h2 class="h-section" id="recenze-nadpis">Recenze</h2>
+    <div class="reviews">
+      {%- for r in recenze %}
+      <blockquote class="review{% if loop.index is even %} review--tint{% endif %}">
+        <p>{{ r.text }}</p>
+        <footer>{{ r.autor }}</footer>
+      </blockquote>
+      {%- endfor %}
+    </div>
+    <p class="center">{{ reservio("recenze", "Více recenzí najdete v rezervačním systému") }}</p>
+  </div>
+</section>

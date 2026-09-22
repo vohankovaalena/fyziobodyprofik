@@ -1,0 +1,141 @@
+---
+title: "Fyzioterapie a zdravý pohyb v Příbrami | Fyzio Body Prof.I.K"
+description: "Fyzio Body Profik – fyzioterapie a zdravý pohyb v Příbrami. Fyzioterapie, masáže, maderoterapie, hubnoucí zábaly bodywraps a skupinová cvičení podle rozvrhu."
+ogTitle: "Fyzio Body Prof.I.K – fyzioterapie a zdravý pohyb v Příbrami"
+---
+{% from "components/ui.njk" import picture with context %}
+
+{#- Převod času „H:MM“ na číslo řádku rozvrhu. Mřížka má hlavičku (řádek 1),
+    ranní blok 8:30–12:00 po čtvrthodinách, jeden řádek pauzy a odpolední
+    blok 16:00–21:00. -#}
+{% macro radek(cas) -%}
+{%- set p = cas.split(":") -%}
+{%- set m = (p[0] | int) * 60 + (p[1] | int) -%}
+{%- if m <= 720 %}{{ 2 + (m - 510) / 15 }}{% else %}{{ 17 + (m - 960) / 15 }}{% endif -%}
+{%- endmacro %}
+{% set casy = ["8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00"] %}
+
+<section class="home-hero">
+  {{ picture("hero-studio", "", "home-hero__bg", true) }}
+  <div class="wrap home-hero__inner">
+    <p class="home-hero__eyebrow">Fyzioterapie a zdravý pohyb v Příbrami</p>
+    <h1 class="home-hero__title">Fyzio Body Prof.I.K</h1>
+  </div>
+</section>
+
+<nav class="tiles wrap" aria-label="Rychlé odkazy">
+  <a class="tile" href="{{ site.reservio.cviceni }}" data-reservio="cviceni">
+    <svg class="icon" aria-hidden="true"><use href="#i-run"/></svg><span>Rezervovat cvičení</span>
+  </a>
+  <a class="tile" href="{{ site.reservio.terapie }}" data-reservio="terapie">
+    <svg class="icon" aria-hidden="true"><use href="#i-lotus"/></svg><span>Objednat terapii</span>
+  </a>
+  <a class="tile" href="/aktuality/">
+    <svg class="icon" aria-hidden="true"><use href="#i-megaphone"/></svg><span>Aktuality</span>
+  </a>
+  <a class="tile tile--accent" href="#rozvrh">
+    <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>Rozvrh lekcí</span>
+  </a>
+</nav>
+
+<section class="news" id="aktuality" aria-labelledby="aktuality-nadpis">
+  <div class="wrap news__inner" data-slider>
+    <button class="news__arrow news__arrow--prev" type="button" data-slider-prev aria-label="Předchozí aktualita" hidden>
+      <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+    </button>
+    <div class="news__body">
+      <h2 class="news__title" id="aktuality-nadpis"><a href="/aktuality/">Aktuálně</a></h2>
+      <ul class="news__list" role="list">
+        {#- Všechny aktuality ze stránky Aktuality, střídají se po 5 s. Text je „nadpis – podtitul“,
+            pokud aktualita nemá vlastní krátký text v poli „kratce“. -#}
+        {%- for a in aktuality %}
+        <li class="news__item" data-slide>
+          <p>{{ a.kratce or (a.nadpis + " – " + a.podtitul) }}</p>
+          <a class="btn btn--primary btn--xs" href="{% if a.odkaz == 'reservio' %}{{ site.reservio.cviceni }}{% else %}{{ a.odkaz }}{% endif %}">{{ a.kratceTlacitko or a.tlacitko }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+    <button class="news__arrow news__arrow--next" type="button" data-slider-next aria-label="Další aktualita" hidden>
+      <svg class="icon" aria-hidden="true"><use href="#i-chevron"/></svg>
+    </button>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="sluzby-nadpis">
+  <div class="wrap">
+    <h2 class="h-section" id="sluzby-nadpis">Naše služby</h2>
+    {#- Karty se rozbalují kliknutím (nativní <details>, funguje i bez JavaScriptu). -#}
+    <ul class="service-cards" role="list">
+      {%- for s in sluzby %}
+      <li>
+        <details class="service-card">
+          <summary class="service-card__head"><span>{{ s.nazev }}</span><svg class="icon" aria-hidden="true"><use href="#i-{{ s.ikona }}"/></svg></summary>
+          <div class="service-card__body">
+            {{ s.text | safe }}
+            <p class="service-card__links">
+              {%- if s.href %}<a class="more" href="{{ s.href }}">{{ s.hrefLabel or "Zjistit více" }}</a>{% endif %}
+              {%- if s.objednat %}<a class="more" href="{{ site.reservio.terapie }}" data-reservio="terapie">Objednat se</a>{% endif %}
+            </p>
+          </div>
+        </details>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
+
+<section class="section section--tight-top" id="rozvrh" aria-labelledby="rozvrh-nadpis">
+  <div class="wrap">
+    <h2 class="h-section" id="rozvrh-nadpis">Rozvrh lekcí</h2>
+    <div class="rozvrh">
+      <div class="rozvrh__osa" aria-hidden="true">
+        {%- for c in casy %}
+        <span style="grid-row: {{ radek(c) }}">{{ c }}</span>
+        {%- endfor %}
+      </div>
+      {%- for den in rozvrh.dny %}
+      <div class="rozvrh__den">
+        <h3 class="rozvrh__nazev">{{ den.nazev }}</h3>
+        <span class="rozvrh__pauza" aria-hidden="true"></span>
+        {%- for l in den.lekce %}
+        {%- if l.obsazeno %}
+        <div class="lekce lekce--obsazeno" style="grid-row: {{ radek(l.od) }} / {{ radek(l.do) }}">
+          <strong>Obsazeno</strong>
+          <span class="lekce__cas">{{ l.od }} – {{ l.do }}</span>
+        </div>
+        {%- else %}
+        <div class="lekce lekce--{{ rozvrh.barvy[l.lektor] or 'rose' }}" style="grid-row: {{ radek(l.od) }} / {{ radek(l.do) }}">
+          <strong>{{ l.nazev }}</strong>
+          <span class="lekce__cas">{{ l.od }} – {{ l.do }}</span>
+          <span class="lekce__lektor">{{ l.lektor }}</span>
+        </div>
+        {%- endif %}
+        {%- endfor %}
+      </div>
+      {%- endfor %}
+    </div>
+    <p class="rozvrh__cta">
+      <a class="btn btn--primary" href="{{ site.reservio.cviceni }}" data-reservio="cviceni">Rezervovat cvičení</a>
+    </p>
+
+    <div class="rules stack">
+      <h2 class="rules__title">Pravidla pro odhlášení z lekcí</h2>
+      <h3>1. Standardní lekce (bez jídla):</h3>
+      <ul>
+        <li>Odhlášení je možné <strong>nejpozději 24 hodin před začátkem lekce</strong> – zdarma.</li>
+        <li>Při pozdějším odhlášení se účtuje <strong>plná cena lekce</strong>.</li>
+        <li><strong>Výjimky</strong> jsou možné jen ve vážných případech – posuzují se individuálně.</li>
+      </ul>
+      <h3>2. Lekce s občerstvením (např. brunch):</h3>
+      <ul>
+        <li><strong>Odhlášení více než 7 dní předem</strong> – bez poplatku.</li>
+        <li><strong>Odhlášení 7 až 1 den před lekcí</strong> – je nutné <strong>uhradit částku za jídlo</strong>.</li>
+        <li><strong>Odhlášení méně než 24 hodin před lekcí</strong> – hradí se <strong>plná cena (jídlo + lekce)</strong>.</li>
+        <li>Výjimky opět možné pouze ve vážných případech.</li>
+      </ul>
+    </div>
+
+    <p class="partner">Jsme <a href="https://www.zinzino.com/" target="_blank" rel="noopener">Zinzino</a> Independent Partner.</p>
+  </div>
+</section>

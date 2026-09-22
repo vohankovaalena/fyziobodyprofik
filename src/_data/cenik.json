@@ -1,0 +1,28 @@
+[
+  { "nazev": "Masáže (klasická, sportovní, relaxační)", "ikona": "lotus", "polozky": [
+    "záda a šíje (60): 900 Kč", "nohy (45–60): 900 Kč", "ruce (30): 500 Kč", "těhotenská (60): 900 Kč" ] },
+  { "nazev": "Manuální lymfatická masáž", "ikona": "lotus", "polozky": [
+    "ruce: 1000 Kč", "nohy: 1450 Kč", "celotělová: 1900 Kč" ] },
+  { "nazev": "Masáž lávovými kameny", "ikona": "lotus", "polozky": [
+    "záda a šíje (60): 1000 Kč", "nohy (45–60): 1000 Kč", "ruce (30): 600 Kč" ] },
+  { "nazev": "Klasická maderoterapie (válečky)", "ikona": "roller", "polozky": [
+    "nohy + zadek (60): 900 Kč", "nohy + zadek + břicho (90): 1300 Kč" ], "poznamka": "Permanentka 5+1 zdarma" },
+  { "nazev": "Brazilská maderoterapie (baňky)", "ikona": "roller", "polozky": [
+    "nohy + zadek + břicho (75–80): 1200 Kč" ], "poznamka": "Permanentka 5+1 zdarma" },
+  { "nazev": "Maderoterapie obličeje", "ikona": "roller", "polozky": [
+    "(30): 400 Kč" ] },
+  { "nazev": "Konzultace s fyzioterapeutem", "ikona": "run", "polozky": [
+    "30 min: 600 Kč", "60 min: 1100 Kč" ] },
+  { "nazev": "Samoopalovací nástřik", "ikona": "sun", "polozky": [
+    "dvě vrstvy barvy nástřiku (30 min): 700 Kč" ] },
+  { "nazev": "Bodywraps", "ikona": "tape", "polozky": [
+    "1. kúra bw: 1490 Kč", "2. kúra bw: 1390 Kč", "3. kúra bw: 1290 Kč", "4. kúra bw: 1190 Kč",
+    "5. kúra bw: 1090 Kč", "6. kúra bw: 990 Kč", "Permanentka (3× kúra): 3990 Kč" ] },
+  { "nazev": "Dornova metoda", "polozky": [
+    "Dornova metoda (60–120 min): 1300–2300 Kč" ] },
+  { "nazev": "Urogynekologický přístup dle PPA", "polozky": [
+    "VSTUPNÍ vyšetření (60′–90′): 1500 Kč", "Kontrolní návštěva (60′): 1100 Kč",
+    "VSTUPNÍ vyšetření pánevního dna/diastázy 2D ultrazvukem: 1500 Kč" ] },
+  { "nazev": "Baňkování", "polozky": [
+    "30 min: 500 Kč" ] }
+]

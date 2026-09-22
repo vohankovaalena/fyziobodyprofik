@@ -1,0 +1,85 @@
+---
+permalink: "/kontakt-fyzioterapie-pribram/"
+title: "Kontakt fyzioterapie, masáže Příbram | Fyzio Body Prof.I.K"
+description: "Kontakt na Fyzio Body Profik, Školní 144, Příbram. Objednejte se na fyzioterapii, masáž nebo cvičení telefonem, e-mailem či online přes Reservio."
+drobecek: "Kontakt"
+---
+<section class="section section--white">
+  <div class="wrap split split--top">
+    <div class="stack">
+      <h1 class="h-section form-title">Napište nám</h1>
+      <form class="form" data-form novalidate>
+        <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
+        <input type="hidden" name="subject" value="Zpráva z webu {{ site.name }}">
+        <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off">
+        <div class="form__row">
+          <div class="field">
+            <label for="f-jmeno">*Jméno a příjmení</label>
+            <input id="f-jmeno" name="jmeno" type="text" autocomplete="name" placeholder=" " required>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <div class="field">
+            <label for="f-email">*E-mailová adresa</label>
+            <input id="f-email" name="email" type="email" autocomplete="email" placeholder=" " required>
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-tema">*S čím vám můžeme pomoci</label>
+          <select id="f-tema" name="tema" required>
+            <option value="">Vyberte…</option>
+            <option>Fyzioterapie</option>
+            <option>Dětská fyzioterapie</option>
+            <option>Masáže</option>
+            <option>Maderoterapie, bodywraps a další body služby</option>
+            <option>Skupinová cvičení</option>
+            <option>Něco jiného</option>
+          </select>
+          <p class="field__error" aria-live="polite"></p>
+        </div>
+        <div class="field">
+          <label for="f-zprava">*Zpráva</label>
+          <textarea id="f-zprava" name="zprava" rows="6" placeholder=" " required></textarea>
+          <p class="field__error" aria-live="polite"></p>
+        </div>
+        <fieldset class="consent">
+          <legend>GDPR</legend>
+          <label><input type="checkbox" name="souhlas" required> Souhlasím se <a href="/ochrana-osobnich-udaju/">zpracováním osobních údajů</a></label>
+        </fieldset>
+        <div class="form__submit">
+          <div class="field field--captcha" data-captcha>
+            <label for="f-kontrola"><span data-captcha-question>6 + 13</span> =</label>
+            <input id="f-kontrola" name="kontrola" type="text" inputmode="numeric" required autocomplete="off">
+            <p class="field__error" aria-live="polite"></p>
+          </div>
+          <button class="btn btn--primary btn--lg" type="submit">Odeslat</button>
+        </div>
+        <p class="form__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+    <div class="map map--large" data-map data-map-query="{{ site.mapQuery }}">
+      <div class="map__consent">
+        <p>Kliknutím na tlačítko „Souhlasím“ povolíte Google Maps.</p>
+        <button class="btn btn--light btn--xs" type="button" data-map-consent>Souhlasím</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--white section--tight-top">
+  <ul class="wrap contact-points" role="list">
+    <li>
+      <svg class="icon" aria-hidden="true"><use href="#i-pin"/></svg>
+      <a class="contact-points__main" href="https://www.google.com/maps/search/?api=1&amp;query={{ site.mapQuery | urlencode }}" target="_blank" rel="noopener">{{ site.address.street }}</a>
+      <span>{{ site.address.city }} {{ site.address.zip }}</span>
+    </li>
+    <li>
+      <svg class="icon" aria-hidden="true"><use href="#i-phone"/></svg>
+      <a class="contact-points__main" href="tel:{{ site.phoneHref }}">{{ site.phone }}</a>
+    </li>
+    <li>
+      <svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg>
+      <a class="contact-points__main" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </li>
+  </ul>
+</section>

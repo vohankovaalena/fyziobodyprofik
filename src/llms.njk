@@ -1,0 +1,65 @@
+---
+# llms.txt (https://llmstxt.org) — souhrn webu v čistém textu pro AI asistenty
+# a AI vyhledávače (ChatGPT, Claude, Perplexity, Gemini). Skládá se ze stejných
+# dat jako web, takže se ceník, rozvrh ani tým nemusí upravovat dvakrát.
+permalink: llms.txt
+layout: false
+eleventyExcludeFromCollections: true
+---
+# {{ site.name }}
+
+> {{ site.description }}
+
+Studio sídlí na adrese {{ site.address.street }}, {{ site.address.zip }} {{ site.address.city }}. Objednat se lze online přes Reservio, telefonicky na {{ site.phone }} nebo e-mailem na {{ site.email }}. Studio je známé také jako {{ site.alternateNames | join(", ") }}.
+
+## Kontakt a rezervace
+
+- Adresa: {{ site.address.street }}, {{ site.address.zip }} {{ site.address.city }}, Česká republika
+- Telefon: {{ site.phone }} ({{ site.phoneHref }})
+- E-mail: {{ site.email }}
+- IČO: {{ site.ico }}
+- Otevírací doba: {{ site.hours[0] }}, {{ site.hours[1] }}
+- [Objednat terapii nebo masáž (Reservio)]({{ site.reservio.terapie }})
+- [Rezervace skupinového cvičení (Reservio)]({{ site.reservio.cviceni }})
+- [Kontaktní stránka]({{ site.url }}/kontakt-fyzioterapie-pribram/)
+- Facebook: {{ site.social.facebook }}
+- Instagram: {{ site.social.instagram }}
+
+## Služby
+{% for s in sluzby %}
+### {{ s.nazev }}
+
+{{ s.text | replace("</li>", "; ") | replace("</p>", " ") | striptags(true) }}
+{% endfor %}
+Podrobnosti: [Fyzio služby]({{ site.url }}/fyzioterapie-pribram/), [Body služby]({{ site.url }}/body-sluzby/)
+
+## Ceník
+
+Ceny v Kč, v závorce délka v minutách. [Aktuální ceník]({{ site.url }}/cenik-fyzioterapie/)
+{% for p in cenik %}
+- **{{ p.nazev }}**: {{ p.polozky | join("; ") }}{% if p.poznamka %} ({{ p.poznamka }}){% endif %}
+{%- endfor %}
+
+## Rozvrh skupinových lekcí
+
+Lekce se rezervují přes [Reservio]({{ site.reservio.cviceni }}).
+{% for d in rozvrh.dny %}
+- **{{ d.nazev }}**: {% set lekce = [] %}{% for l in d.lekce %}{% if not l.obsazeno %}{% if lekce.push(l.od + "–" + l.do + " " + l.nazev + " (" + l.lektor + ")") %}{% endif %}{% endif %}{% endfor %}{{ lekce | join(", ") if lekce.length else "bez veřejných lekcí" }}
+{%- endfor %}
+
+## Tým
+{% for c in tym %}
+- **{{ c.jmeno }}** – {{ c.funkce }}
+{%- endfor %}
+
+Více o týmu: [O nás]({{ site.url }}/fyzioterapeuti-pribram/)
+
+## Blog
+{% for c in blog %}
+- [{{ c.nadpis }}]({{ site.url }}{{ c.adresa }}): {{ c.popis }}
+{%- endfor %}
+
+## Další stránky
+
+- [Úvodní stránka]({{ site.url }}/)
+- [Aktuality]({{ site.url }}/aktuality/): nové lekce, workshopy a akce

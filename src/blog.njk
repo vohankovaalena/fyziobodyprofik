@@ -1,0 +1,29 @@
+---
+permalink: "/blog-fyzioterapie/"
+title: "Zdravý pohyb a fyzioterapie | Blog Fyzio Body Prof.I.K"
+description: "Blog Fyzio Body Profik Příbram: tipy na cvičení, prevence bolesti zad, péče o pánevní dno, cvičení v těhotenství a po porodu od fyzioterapeutek."
+drobecek: "Blog"
+---
+{% from "components/ui.njk" import picture with context %}
+
+<section class="section">
+  <div class="wrap">
+    <header class="blog-head center">
+      <p class="eyebrow">Blog</p>
+      <h1 class="blog-head__title">Zdravý pohyb a fyzioterapie</h1>
+      <p class="blog-head__sub">Nejnovější články</p>
+    </header>
+    <ul class="posts" role="list">
+      {%- for c in blog %}
+      <li class="post-card">
+        <a class="post-card__media" href="{{ c.adresa }}" tabindex="-1" aria-hidden="true">{{ picture(c.foto, "") }}</a>
+        <div class="post-card__body">
+          <h2 class="post-card__title"><a href="{{ c.adresa }}">{{ c.nadpis }}</a></h2>
+          <p>{{ c.perex }}</p>
+          <a class="more" href="{{ c.adresa }}">Číst více<span class="visually-hidden">: {{ c.nadpis }}</span></a>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

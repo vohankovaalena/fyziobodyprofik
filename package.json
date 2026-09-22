@@ -1,0 +1,14 @@
+{
+  "name": "fyziobodyprofik-web",
+  "version": "1.0.0",
+  "description": "Statický web studia Fyzio Body Prof.I.K, Příbram",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "eleventy"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.6"
+  }
+}

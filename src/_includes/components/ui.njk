@@ -1,0 +1,45 @@
+{#
+  Sdílené komponenty. Import ve stránce:
+  {% from "components/ui.njk" import picture, service, accordion with context %}
+  „with context“ je nutné — makra sahají na globální data (img, site).
+#}
+
+{# Fotka jako <picture> s WebP a JPG záložní verzí. Rozměry se berou z _data/img.json. #}
+{% macro picture(name, alt, cls="", eager=false) %}
+{%- set dim = img[name] -%}
+<picture>
+  <source type="image/webp" srcset="/assets/img/{{ name }}.webp">
+  <img class="{{ cls }}" src="/assets/img/{{ name }}.jpg" alt="{{ alt }}" width="{{ dim[0] }}" height="{{ dim[1] }}"{% if eager %} fetchpriority="high"{% else %} loading="lazy"{% endif %} decoding="async">
+</picture>
+{%- endmacro %}
+
+{#
+  Sekce služby: fotka na jedné straně, text na druhé. Liché sekce mají fotku
+  vlevo a světlé pozadí, sudé fotku vpravo a mátový panel s textem.
+  Obsah (odstavce, akordeony, tlačítka) se předává přes {% call %}.
+#}
+{% macro service(id, nazev, foto, alt, podnadpis="", flip=false) %}
+<section class="service{% if flip %} service--flip{% endif %}" id="{{ id }}">
+  <div class="service__media">{{ picture(foto, alt) }}</div>
+  <div class="service__body">
+    <div class="service__text stack">
+      <h2 class="service__title">{{ nazev }}</h2>
+      {%- if podnadpis %}<p class="eyebrow">{{ podnadpis }}</p>{% endif %}
+      {{ caller() }}
+    </div>
+  </div>
+</section>
+{%- endmacro %}
+
+{# Rozbalovací položka — nativní <details>, funguje i bez JavaScriptu. #}
+{% macro accordion(nadpis, open=false) %}
+<details class="accordion"{% if open %} open{% endif %}>
+  <summary><span>{{ nadpis }}</span><svg class="accordion__icon" aria-hidden="true"><use href="#i-plus"/></svg></summary>
+  <div class="accordion__body">{{ caller() }}</div>
+</details>
+{%- endmacro %}
+
+{# Tlačítka do Reservia — adresy jsou v _data/site.js. #}
+{% macro reservio(typ="terapie", label="Objednat se online", cls="btn--primary") %}
+<a class="btn {{ cls }}" href="{{ site.reservio[typ] }}" data-reservio="{{ typ }}">{{ label }}</a>
+{%- endmacro %}

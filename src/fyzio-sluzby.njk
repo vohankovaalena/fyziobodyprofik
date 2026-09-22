@@ -1,0 +1,109 @@
+---
+permalink: "/fyzioterapie-pribram/"
+title: "Fyzioterapie Příbram | Fyzio Body Prof.I.K"
+description: "Fyzioterapie Příbram: individuální a dětská fyzioterapie, tejpování, SM systém, Dornova metoda a urogynekologická fyzioterapie dle PPA. Objednání online."
+drobecek: "Fyzio služby"
+---
+{% from "components/ui.njk" import picture, service, accordion, reservio with context %}
+{% set karty = [
+  ["individualni-fyzioterapie", "Individuální fyzioterapie"],
+  ["tejpovani", "Tejpování"],
+  ["sm-system", "SM systém"],
+  ["detska-fyzioterapie", "Dětská fyzioterapie"],
+  ["dornova-metoda", "Dornova metoda"],
+  ["urogynekologie", "Urogynekologický přístup dle PPA"]
+] %}
+
+<section class="page-hero">
+  {{ picture("fyzio-hero", "", "page-hero__bg", true) }}
+  <div class="wrap page-hero__inner stack">
+    <h1 class="page-hero__title">Fyzio služby</h1>
+    <p class="page-hero__sub">Fyzioterapie Příbram</p>
+    <p>{{ reservio("terapie", "Rezervace online") }}</p>
+  </div>
+</section>
+
+<section class="cards-panel" aria-label="Přehled fyzio služeb">
+  <ul class="cards-panel__grid" role="list">
+    {%- for k in karty %}
+    <li>
+      <a class="photo-card" href="#{{ k[0] }}">
+        {{ picture(k[0], "") }}
+        <span class="photo-card__label">{{ k[1] }}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+{% call service("individualni-fyzioterapie", "Individuální fyzioterapie", "individualni-fyzioterapie", "Fyzioterapeutka ošetřuje klientku na lehátku", "Fyzioterapie Příbram") %}
+<p>Pokud potřebujete ulevit od bolesti, zdravě posílit tělo i mysl můžete u nás využít služeb fyzioterapeuta. Nabízíme komplexní diagnostiku, terapii a prevenci poruch pohybového aparátu. Nabídka je široká, proto sestavujeme terapeutický plán každému na míru. Využíváme u toho zkušeností, které jsme během let (kolem 15 let) nabrali v praxi, odborných kurzech a seminářích.</p>
+<p>Zabýváme se mobilizačními technikami, pohybovou terapií na různých podkladech, kraniosakrální terapií a také dalšími podpůrnými metodami, jako je například kineziotaping, termoterapie a další.</p>
+<p>{{ reservio("terapie") }}</p>
+{% endcall %}
+
+{% call service("tejpovani", "Tejpování", "tejpovani", "Fyzioterapeutka lepí tejp klientovi na rameno", "", true) %}
+<p>Tejpování je fyzioterapeutická technika, kterou používáme, pokud potřebujeme uvolnit nebo naopak zpevnit či podpořit svalstvo, šlachy nebo lymfu.</p>
+<p>Historie tejpování se váže už k roku 1979, kdy ho japonský lékař Kenzo Kase vymyslel, poprvé se veřejně použil na olympijských hrách v Soulu roku 1988 pro japonský tým, v Evropě se uvedl na trh v roce 1996. Tato technika spočívá v lepení speciálních pásek na postižená místa. Pásky bývají různě barevné a jsou voděodolné, hypoalergenní a na daném místě vydrží 5–7 dní. Samozřejmě mnohem většího efektu dosáhneme, pokud ho kombinujeme se cvičením.</p>
+{% call accordion("Kdy se používá?", true) %}
+<ul>
+  <li>léčba zranění a jizev</li>
+  <li>podpora oslabených míst</li>
+  <li>zlepšení výkonu</li>
+  <li>správné držení těla</li>
+  <li>v těhotenství</li>
+  <li>při menstruačních bolestech</li>
+  <li>při otocích</li>
+  <li>pro rychlejší regeneraci u modřinových stavů</li>
+</ul>
+{% endcall %}
+{% call accordion("Kdy není vhodné tejpovat?") %}
+<ul>
+  <li>na ekzémy</li>
+  <li>podrážděnou kůži</li>
+  <li>čerstvé jizvy</li>
+  <li>kožní oděrky</li>
+  <li>znaménka</li>
+  <li>v případě křečových žil</li>
+  <li>při cukrovce</li>
+  <li>při rakovině</li>
+  <li>při žilní trombóze</li>
+</ul>
+{% endcall %}
+<p>{{ reservio("terapie") }}</p>
+{% endcall %}
+
+{% call service("sm-system", "SM systém", "sm-system", "Lektorka cvičí s elastickým lanem SM systému", "Fyzioterapie Příbram") %}
+<p>SM systém je „Stabilizační a mobilizační cvičení“, které je vhodné pro širokou věkovou skupinu. Je vhodné pro lidi s bolestmi zad a velkých kloubů, ale i jako kompenzační a preventivní cvičení. Mnoho sportovců tuto metodu používá i jako kondiční trénink. Cvičení se skládá ze sestavy cviků, které mají za úkol zaktivovat správné svalové řetězce a odlehčit tak přetížený pohybový aparát. Hlavním cílem je znovunastavit vzpřímené držení těla a odlehčit tělu od špatných pohybových stereotypů. Cvičení u nás provádíme jak individuálně, tak skupinově.</p>
+<p class="btn-row">{{ reservio("terapie", "Objednat na terapii") }} {{ reservio("cviceni", "Rezervovat cvičení", "btn--pink") }}</p>
+{% endcall %}
+
+{% call service("detska-fyzioterapie", "Dětská fyzioterapie", "detska-fyzioterapie", "Dětský fyzioterapeut cvičí se skupinou dětí v sále", "", true) %}
+<p>Hledáte <strong>odbornou dětskou fyzioterapii v Příbrami</strong>? Svěřte své dítě do péče zkušeného fyzioterapeuta <strong>Bc. Ľuba Bičeje</strong>, který se zaměřuje na <strong>fyzioterapii kojenců, batolat i starších dětí</strong>.</p>
+<p>Ľubo Bičej využívá moderní metody fyzioterapie a individuální přístup ke každému dítěti. Pomáhá s poruchami hybnosti, opožděným psychomotorickým vývojem, vadným držením těla i problémy spojenými s růstovým obdobím.</p>
+<p>Naším cílem je podpora zdravého pohybového vývoje dětí v bezpečném a přátelském prostředí.</p>
+<p>{{ reservio("terapie") }}</p>
+{% endcall %}
+
+{% call service("dornova-metoda", "Dornova metoda", "dornova-metoda", "Terapeutka provádí Dornovu metodu na zádech klientky", "Fyzioterapie Příbram") %}
+<p>Dornova metoda je jemná manuální terapie, jejíž pomocí jsou klouby a obratle bezpečně a přesně uváděny zpět do svých původních správných poloh. Současně se tím otevřou brány energie, které mohou v člověku lépe proudit. To vše se děje volným a přirozeným pohybem ošetřovaného za jeho účasti a pomocí jemného tlaku palců terapeuta. Přitom terapeut nikdy nepřekročí práh bolesti a díky tomu, že pohyb není prováděn trhnutím, je tato metoda bezpečná. Například při napravování nesprávných poloh obratlů se pohybem obchází svalová ochrana a jemným tlakem tak může být obratel přiveden do správné polohy bez nežádoucích vedlejších účinků.</p>
+<p>Náprava obratlů se vždy provádí aktivním pohybem pacienta. Po ošetření obratle nebo kloubu terapeut ošetřované místo jemně hladí oběma rukama směrem ke konci končetin nebo ke kostrči. Tím se podpoří volný pohyb uvolněné energie v těle.</p>
+<p>{{ reservio("terapie", "Objednat na terapii") }}</p>
+{% endcall %}
+
+{% call service("urogynekologie", "Urogynekologický přístup dle PPA", "urogynekologie", "Model pánve s pánevním dnem v rukou lékařky", "", true) %}
+<p>Urogynekologická fyzioterapie dle <strong>PPA – Palaščák Pelvic Approach</strong> je specializovaný fyzioterapeutický přístup zaměřený na diagnostiku a terapii funkčních poruch pánevního dna. Pomáhá ženám, které trápí potíže spojené s těhotenstvím, porodem, bolestí pánve nebo problémy s močovým měchýřem.</p>
+<p>Terapie vychází z komplexního pohledu na tělo – pánevní dno je úzce propojeno s bránicí, hlubokým stabilizačním systémem, držením těla i funkcí břišních svalů. Proto se při terapii neřeší pouze samotné pánevní dno, ale také souvislosti s pohybovým aparátem, dýcháním a každodenními pohybovými návyky.</p>
+<h3 class="service__subtitle">Pro koho je terapie vhodná</h3>
+<p>Urogynekologická fyzioterapie může pomoci například při těchto potížích:</p>
+<ul>
+  <li>potíže <strong>po porodu</strong></li>
+  <li>obtíže <strong>během těhotenství</strong></li>
+  <li><strong>diastáza přímých břišních svalů</strong></li>
+  <li><strong>únik moči (inkontinence)</strong></li>
+  <li><strong>bolesti zad, pánve nebo břicha</strong></li>
+  <li><strong>bolestivá menstruace</strong></li>
+  <li><strong>endometrióza</strong></li>
+</ul>
+<p>{{ reservio("terapie") }}</p>
+{% endcall %}

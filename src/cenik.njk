@@ -1,0 +1,30 @@
+---
+permalink: "/cenik-fyzioterapie/"
+title: "Ceník masáží a fyzioterapie Příbram | Fyzio Body Prof.I.K"
+description: "Ceník Fyzio Body Profik Příbram: fyzioterapie, urogynekologie, Dornova metoda, masáže, maderoterapie, bodywraps a samoopalovací nástřik."
+drobecek: "Ceník"
+---
+{% from "components/ui.njk" import reservio with context %}
+
+<section class="section pricing-page">
+  <span class="deco-ring deco-ring--left" aria-hidden="true"></span>
+  <span class="deco-ring deco-ring--right" aria-hidden="true"></span>
+  <div class="wrap">
+    <h1 class="h-page">Ceník</h1>
+    <ul class="pricing" role="list">
+      {%- for p in cenik %}
+      <li class="price-item">
+        {%- if p.ikona %}<svg class="icon price-item__icon" aria-hidden="true"><use href="#i-{{ p.ikona }}"/></svg>{% endif %}
+        <h2 class="price-item__title">{{ p.nazev }}</h2>
+        <ul>
+          {%- for polozka in p.polozky %}
+          <li>{{ polozka }}</li>
+          {%- endfor %}
+        </ul>
+        {%- if p.poznamka %}<p class="price-item__note">{{ p.poznamka }}</p>{% endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+    <p class="btn-row center">{{ reservio("terapie", "Objednat terapii") }} {{ reservio("cviceni", "Rezervovat cvičení", "btn--pink") }}</p>
+  </div>
+</section>

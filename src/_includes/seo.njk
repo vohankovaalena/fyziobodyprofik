@@ -1,0 +1,116 @@
+{#-
+  SEO a GEO hlavička: title, description, robots, kanonická adresa, Open Graph
+  a strukturovaná data (JSON-LD). Vkládá se z base.njk.
+
+  Nastavení ve front matter stránky:
+    noindex: true   → stránka se neindexuje a nepatří do sitemap.xml
+    drobecek: "…"   → název stránky v drobečkové navigaci (BreadcrumbList)
+    ogImage: "…"    → fotka pro sdílení (jméno souboru z assets/img bez přípony)
+-#}
+{%- set kanonicka = site.url + page.url -%}
+{%- set foto = ogImage or "hero-studio" -%}
+{%- set fotoUrl = site.url + "/assets/img/" + foto + ".jpg" -%}
+{%- set studioId = site.url + "/#studio" -%}
+<title>{{ title }}</title>
+<meta name="description" content="{{ description }}">
+{%- if noindex %}
+<meta name="robots" content="noindex, follow">
+{%- else %}
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<link rel="canonical" href="{{ kanonicka }}">
+{%- endif %}
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ ogTitle or title }}">
+<meta property="og:description" content="{{ ogDescription or description }}">
+<meta property="og:url" content="{{ kanonicka }}">
+<meta property="og:type" content="{{ 'article' if clanek else 'website' }}">
+<meta property="og:locale" content="cs_CZ">
+<meta property="og:image" content="{{ fotoUrl }}">
+{%- if img[foto] %}
+<meta property="og:image:width" content="{{ img[foto][0] }}">
+<meta property="og:image:height" content="{{ img[foto][1] }}">
+{%- endif %}
+<meta name="twitter:card" content="summary_large_image">
+{%- if clanek %}
+<meta property="article:published_time" content="{{ clanek.publikovano }}">
+<meta property="article:modified_time" content="{{ clanek.upraveno }}">
+{%- endif %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["Physiotherapy", "HealthAndBeautyBusiness"],
+      "@id": {{ studioId | dump | safe }},
+      "name": {{ site.name | dump | safe }},
+      "alternateName": {{ site.alternateNames | dump | safe }},
+      "description": {{ site.description | dump | safe }},
+      "url": {{ (site.url + "/") | dump | safe }},
+      "logo": {{ (site.url + "/assets/img/logo-mark.png") | dump | safe }},
+      "image": {{ (site.url + "/assets/img/hero-studio.jpg") | dump | safe }},
+      "email": {{ site.email | dump | safe }},
+      "telephone": {{ site.phoneHref | dump | safe }},
+      "taxID": {{ site.ico | dump | safe }},
+      "priceRange": {{ site.priceRange | dump | safe }},
+      "currenciesAccepted": "CZK",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": {{ site.address.street | dump | safe }},
+        "addressLocality": {{ site.address.city | dump | safe }},
+        "postalCode": {{ site.address.zip | dump | safe }},
+        "addressCountry": "CZ"
+      },
+      "hasMap": {{ ("https://www.google.com/maps/search/?api=1&query=" + (site.mapQuery | urlencode)) | dump | safe }},
+      "areaServed": { "@type": "City", "name": "Příbram" },
+      "knowsAbout": ["fyzioterapie", "dětská fyzioterapie", "urogynekologická fyzioterapie", "pánevní dno", "diastáza břišních svalů", "Dornova metoda", "kraniosakrální terapie", "tejpování", "SM systém", "masáže", "těhotenské masáže", "lymfatická masáž", "maderoterapie", "bodywraps", "samoopalovací nástřik", "pilates", "jóga", "barre", "cvičení v těhotenství", "cvičení po porodu"],
+      "potentialAction": [
+        { "@type": "ReserveAction", "name": "Objednat terapii", "target": {{ site.reservio.terapie | dump | safe }} },
+        { "@type": "ReserveAction", "name": "Rezervace skupinového cvičení", "target": {{ site.reservio.cviceni | dump | safe }} }
+      ],
+      "employee": [
+        {%- for c in tym %}
+        { "@type": "Person", "name": {{ c.jmeno | dump | safe }}, "jobTitle": {{ c.funkce | dump | safe }} }{% if not loop.last %},{% endif %}
+        {%- endfor %}
+      ],
+      "sameAs": [{{ site.social.facebook | dump | safe }}, {{ site.social.instagram | dump | safe }}]
+    },
+    {
+      "@type": "WebSite",
+      "@id": {{ (site.url + "/#web") | dump | safe }},
+      "url": {{ (site.url + "/") | dump | safe }},
+      "name": {{ site.name | dump | safe }},
+      "inLanguage": "cs",
+      "publisher": { "@id": {{ studioId | dump | safe }} }
+    }
+    {%- if clanek %},
+    {
+      "@type": "BlogPosting",
+      "@id": {{ (kanonicka + "#clanek") | dump | safe }},
+      "mainEntityOfPage": {{ kanonicka | dump | safe }},
+      "headline": {{ clanek.nadpis | dump | safe }},
+      "description": {{ description | dump | safe }},
+      "image": {{ fotoUrl | dump | safe }},
+      "datePublished": {{ clanek.publikovano | dump | safe }},
+      "dateModified": {{ clanek.upraveno | dump | safe }},
+      "inLanguage": "cs",
+      "author": { "@id": {{ studioId | dump | safe }} },
+      "publisher": { "@id": {{ studioId | dump | safe }} }
+    }
+    {%- endif %}
+    {%- if drobecek %},
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Domů", "item": {{ (site.url + "/") | dump | safe }} },
+        {%- if clanek %}
+        { "@type": "ListItem", "position": 2, "name": "Blog", "item": {{ (site.url + "/blog-fyzioterapie/") | dump | safe }} },
+        { "@type": "ListItem", "position": 3, "name": {{ drobecek | dump | safe }}, "item": {{ kanonicka | dump | safe }} }
+        {%- else %}
+        { "@type": "ListItem", "position": 2, "name": {{ drobecek | dump | safe }}, "item": {{ kanonicka | dump | safe }} }
+        {%- endif %}
+      ]
+    }
+    {%- endif %}
+  ]
+}
+</script>

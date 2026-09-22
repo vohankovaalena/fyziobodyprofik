@@ -1,0 +1,30 @@
+---
+title: "Aktuality | Novinky a akce ve Fyzio Body Profik Příbram"
+description: "Aktuální informace, nové lekce, workshopy, speciální akce a nové služby. Zjistěte, co je nového ve studiu Fyzio Body Profik v Příbrami."
+drobecek: "Aktuality"
+---
+{% from "components/ui.njk" import picture with context %}
+
+<section class="banner" aria-hidden="true">
+  {{ picture("aktuality-hero", "", "banner__img", true) }}
+</section>
+
+<section class="section section--white news-page">
+  <div class="wrap">
+    <h1 class="news-page__title">Aktuálně ze studia</h1>
+    {#- Obsah karet je v _data/aktuality.json -#}
+    <ul class="news-cards" role="list">
+      {%- for a in aktuality %}
+      <li class="news-card">
+        {%- if a.foto %}{{ picture(a.foto, a.nadpis, "news-card__img") }}{% endif %}
+        <h2 class="news-card__title">{{ a.nadpis }}</h2>
+        {%- if a.podtitul %}<p class="news-card__strong">{{ a.podtitul }}</p>{% endif %}
+        <div class="news-card__text">{{ a.text | safe }}</div>
+        {%- if a.tlacitko %}
+        <p class="news-card__cta"><a class="news-card__link" href="{% if a.odkaz == 'reservio' %}{{ site.reservio.cviceni }}{% else %}{{ a.odkaz }}{% endif %}"{% if a.odkaz == 'reservio' %} data-reservio="cviceni"{% endif %}>{{ a.tlacitko }}</a></p>
+        {%- endif %}
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>

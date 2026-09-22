@@ -1,0 +1,56 @@
+{
+  "poznamka": "Časy ve tvaru H:MM. Rozvrh pokrývá 8:30–12:00 a 16:00–21:00 (po čtvrthodinách). Barva lekce se bere podle lektora (klíč v 'barvy'), 'obsazeno: true' vykreslí šedý blok.",
+  "barvy": {
+    "Wážky": "mustard",
+    "Jana": "pink",
+    "Vendy": "rose",
+    "Ivka": "green",
+    "Michael": "green",
+    "Ivka nebo Karol": "coral",
+    "Péťa": "lavender",
+    "Zuzka": "blue",
+    "Maky": "tan"
+  },
+  "dny": [
+    { "nazev": "Pondělí", "lekce": [
+      { "nazev": "Mama Workout", "od": "9:00", "do": "10:00", "lektor": "Wážky" },
+      { "nazev": "Mama Workout", "od": "10:00", "do": "11:00", "lektor": "Wážky" },
+      { "obsazeno": true, "od": "17:00", "do": "18:00" },
+      { "nazev": "Lady Latino", "od": "18:00", "do": "19:00", "lektor": "Jana" },
+      { "nazev": "Yoga", "od": "19:00", "do": "20:00", "lektor": "Vendy" }
+    ]},
+    { "nazev": "Úterý", "lekce": [
+      { "obsazeno": true, "od": "8:30", "do": "12:00" },
+      { "nazev": "Lady Latino", "od": "17:00", "do": "18:00", "lektor": "Jana" },
+      { "nazev": "SM systém", "od": "18:00", "do": "19:00", "lektor": "Ivka" },
+      { "nazev": "Total Barre", "od": "19:00", "do": "20:00", "lektor": "Vendy" }
+    ]},
+    { "nazev": "Středa", "lekce": [
+      { "nazev": "Barre bodyforming", "od": "8:30", "do": "9:30", "lektor": "Vendy" },
+      { "obsazeno": true, "od": "10:00", "do": "11:00" },
+      { "nazev": "Těhot. cvičení", "od": "17:00", "do": "18:00", "lektor": "Wážky" },
+      { "nazev": "BSH", "od": "18:00", "do": "19:00", "lektor": "Wážky" },
+      { "nazev": "SM systém", "od": "19:00", "do": "20:00", "lektor": "Michael" }
+    ]},
+    { "nazev": "Čtvrtek", "lekce": [
+      { "nazev": "Fyzio Fit", "od": "8:30", "do": "9:30", "lektor": "Ivka nebo Karol" },
+      { "obsazeno": true, "od": "10:00", "do": "11:00" },
+      { "nazev": "Barre", "od": "17:00", "do": "18:00", "lektor": "Péťa" },
+      { "nazev": "Pilates", "od": "18:00", "do": "19:00", "lektor": "Péťa" },
+      { "nazev": "Yoga", "od": "19:00", "do": "20:00", "lektor": "Zuzka" }
+    ]},
+    { "nazev": "Pátek", "lekce": [
+      { "nazev": "Barre bodyforming", "od": "8:30", "do": "9:30", "lektor": "Vendy" }
+    ]},
+    { "nazev": "Sobota", "lekce": [
+      { "nazev": "Total Barre", "od": "8:30", "do": "9:30", "lektor": "Vendy" },
+      { "nazev": "Pilates", "od": "9:45", "do": "10:45", "lektor": "Péťa" }
+    ]},
+    { "nazev": "Neděle", "lekce": [
+      { "nazev": "Barre Beauty", "od": "9:00", "do": "10:00", "lektor": "Péťa" },
+      { "nazev": "Total Barre", "od": "10:15", "do": "11:15", "lektor": "Vendy" },
+      { "nazev": "Yoga", "od": "18:00", "do": "19:00", "lektor": "Zuzka" },
+      { "nazev": "Pilates", "od": "19:00", "do": "20:00", "lektor": "Maky" }
+    ]}
+  ]
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "slug": "zdrava-chodidla",
+    "adresa": "/zdrava-chodidla/",
+    "titulek": "Zdravá chodidla: Základ správného pohybu",
+    "popis": "Zdravá chodidla - objevte jejich význam pro celkové držení těla a pohyb. Fyzio Body Profik Příbram nabízí tipy a cvičení pro posílení nohou a prevenci bolestí.",
+    "publikovano": "2025-04-01",
+    "upraveno": "2025-04-11",
+    "foto": "blog-chodidla",
+    "nadpis": "Zdravá chodidla aneb všechno začíná nohou",
+    "perex": "Lidská noha, každá je jiná. Malá, velká, úzká, dlouhá, široká, s vysokým nártem, … Ať už je jakákoli, tak bychom si ji měli velice hýčkat a pečovat o ni, abychom měli zdravá chodidla. Co pro naše nohy můžeme každý den udělat, aniž by nás to stálo hodně času? Dáme vám…",
+    "hero": "clanek-chodidla"
+  },
+  {
+    "slug": "oslabene-panevni-dno",
+    "adresa": "/oslabene-panevni-dno/",
+    "titulek": "Oslabené pánevní dno: Jak ho poznat a posílit",
+    "popis": "Trápí vás oslabené pánevní dno a únik moči? Zjistěte, jak rozpoznat příznaky a jak pomocí fyzioterapie v Příbrami pánevní dno posílit a uvolnit.",
+    "publikovano": "2025-04-01",
+    "upraveno": "2025-04-11",
+    "foto": "blog-panevni-dno",
+    "nadpis": "Tabu jménem oslabené pánevní dno",
+    "perex": "Oslabené pánevní dno – mnoho žen s ním má problémy, to s sebou nese nekomfort v podobě úniku moči, tzv. inkontinence. Spolu se podíváme na to, co to vlastně pánevní dno je, jak poznat, že je oslabené a jakými technikami ho můžeme znovu posílit. INKONTINENCE – strašák…",
+    "hero": "clanek-panevni-dno"
+  },
+  {
+    "slug": "cas-poporodni",
+    "adresa": "/cviceni-po-porodu/",
+    "titulek": "Cvičení po porodu: Správný start a péče o tělo",
+    "popis": "Cvičení po porodu - jak začít bezpečně? Objevte tipy, jak posílit tělo po porodu přirozenou cestou, včetně doporučení po císařském řezu. Fyzioterapie Příbram.",
+    "publikovano": "2025-04-01",
+    "upraveno": "2025-04-11",
+    "foto": "blog-poporodni",
+    "nadpis": "Čas poporodní aneb jak si zachovat postoj",
+    "perex": "Cvičení po porodu – jak to s ním vlastně je? Kdo má za sebou porod dá nám za pravdu, že tento čas není úplně easy a happy. Je to období hodně citlivé a dost náročné a proto začneme zlehka. Zkusíme vám shrnout základní poznatky nejen z vlastní zkušenosti, ale hlavně z…",
+    "hero": "clanek-poporodni"
+  },
+  {
+    "slug": "nuz-v-zadech",
+    "adresa": "/bolest-zad/",
+    "titulek": "Bolest zad: Příčiny a tipy, jak si ulevit",
+    "popis": "Trápí vás bolest zad? Zjistěte, jak vzniká, jak jí předejít a jaké cviky či terapie pomáhají. Fyzioterapeuti z Příbrami vám poradí s úlevou i prevencí.",
+    "publikovano": "2025-04-01",
+    "upraveno": "2025-04-11",
+    "foto": "blog-zada",
+    "nadpis": "Nůž v zádech aneb s dechem v koncích",
+    "perex": "Bolest zad. Už jste to někdy zažili? Někdo vám přes noc zapíchnul do zad kudlu. Ráno to píchá pod lopatkou, máte „infarkt“ nebo vás bodá za krkem. V horším případě všechno dohromady. Otočka vpravo nebo vlevo vypadá jako z filmu Vesničko má středisková (musíte se…",
+    "hero": "clanek-zada"
+  },
+  {
+    "slug": "cviceni-v-tehotenstvi",
+    "adresa": "/cviceni-v-tehotenstvi/",
+    "titulek": "Cvičení v těhotenství: Co ano a co ne",
+    "popis": "Cvičení v těhotenství - zjistěte, jak cvičit bezpečně. Tipy od fyzioterapeutek z Fyzio Body Profik Příbram: vhodné aktivity, čemu se vyhnout a jak pečovat o tělo i miminko.",
+    "publikovano": "2025-04-01",
+    "upraveno": "2025-04-11",
+    "foto": "blog-tehotenstvi",
+    "nadpis": "Cvičení v těhotenství: Co si (ne)dopřát? A jak (ne)cvičit? To si hned povíme…",
+    "perex": "Těhotenství, nejkrásnější období v životě matky,… No, jak pro koho. Pojďme se společně podívat na to, co si v tomhle krásném období můžete dopřát a co zase naopak vynechat. Jak si zacvičit a co nechat radši jiným. Na začátek si pojďme definovat…",
+    "hero": "clanek-tehotenstvi"
+  }
+]

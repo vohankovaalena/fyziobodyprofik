@@ -1,0 +1,62 @@
+---
+pagination:
+  data: blog
+  size: 1
+  alias: clanek
+  # Do kolekcí (a tím do sitemap.xml) patří všechny články, ne jen první.
+  addAllPagesToCollections: true
+# Adresa článku je stejná jako na původním webu (pole adresa v blog.json).
+permalink: "{{ clanek.adresa }}"
+eleventyComputed:
+  title: "{{ clanek.titulek or clanek.nadpis }} | Fyzio Body Prof.I.K"
+  description: "{{ clanek.popis or (clanek.perex | truncate(150)) }}"
+  ogImage: "{{ clanek.hero }}"
+  drobecek: "{{ clanek.nadpis }}"
+---
+{% from "components/ui.njk" import picture, reservio with context %}
+{#- Text článku je v _includes/clanky/<slug>.njk, pořadí a perexy v _data/blog.json.
+    „←“ vede na starší článek (další v seznamu), „→“ na novější. -#}
+{% set starsi = pagination.page.next %}
+{% set novejsi = pagination.page.previous %}
+{% set ostatni = [] %}
+{%- for c in blog %}{% if c.slug != clanek.slug and ostatni.length < 3 %}{% if ostatni.push(c) %}{% endif %}{% endif %}{% endfor %}
+
+<article class="article">
+  <header class="article-head wrap">
+    {{ picture(clanek.hero, "", "article-head__img", true) }}
+    <div class="article-head__band">
+      <h1 class="article-head__title">{{ clanek.nadpis }}</h1>
+    </div>
+    <p class="center">{{ reservio("terapie", "Objednat terapii") }}</p>
+  </header>
+
+  <div class="article-body-wrap">
+    <span class="deco-ring deco-ring--article" aria-hidden="true"></span>
+    <div class="article-body">
+      <div class="article__content">
+        {% include "clanky/" + clanek.slug + ".njk" %}
+      </div>
+      <nav class="article-nav" aria-label="Další články">
+        {%- if starsi %}<a class="article-nav__prev" href="{{ starsi.adresa }}">← {{ starsi.nadpis }}</a>{% endif %}
+        {%- if novejsi %}<a class="article-nav__next" href="{{ novejsi.adresa }}">{{ novejsi.nadpis }} →</a>{% endif %}
+      </nav>
+    </div>
+  </div>
+</article>
+
+<section class="latest" aria-labelledby="nejnovejsi-nadpis">
+  <div class="latest__box">
+    <h2 class="latest__title" id="nejnovejsi-nadpis">Nejnovější příspěvky</h2>
+    <ul class="latest__grid" role="list">
+      {%- for c in ostatni %}
+      <li class="latest-card">
+        <a href="{{ c.adresa }}" tabindex="-1" aria-hidden="true">{{ picture(c.foto, "") }}</a>
+        <div class="latest-card__body">
+          <h3 class="latest-card__title"><a href="{{ c.adresa }}">{{ c.nadpis }}</a></h3>
+          <p>{{ c.perex | truncate(110) }}</p>
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+</section>
