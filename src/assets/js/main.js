@@ -144,16 +144,6 @@ document.querySelectorAll("[data-year]").forEach((el) => {
   });
 })();
 
-/* ------------------------------------------------- Kontrolní příklad */
-/* Jednoduchá ochrana proti robotům: náhodný součet dvou čísel. */
-document.querySelectorAll("[data-captcha]").forEach((box) => {
-  const a = 2 + Math.floor(Math.random() * 9);
-  const b = 2 + Math.floor(Math.random() * 14);
-  box.dataset.answer = String(a + b);
-  const q = box.querySelector("[data-captcha-question]");
-  if (q) q.textContent = `${a} + ${b}`;
-});
-
 /* ------------------------------------------------------------- Formuláře */
 document.querySelectorAll("form[data-form]").forEach((form) => {
   const status = form.querySelector(".form__status");
@@ -186,9 +176,6 @@ document.querySelectorAll("form[data-form]").forEach((form) => {
       } else if (input.type === "email" && input.value && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value)) {
         setError(field, "Zkontrolujte prosím tvar e-mailu.");
         firstBad = firstBad || input;
-      } else if (field.dataset.answer && input.value.trim() !== field.dataset.answer) {
-        setError(field, "Výsledek nesedí.");
-        firstBad = firstBad || input;
       }
     });
     const consent = form.querySelector(".consent input[required]");
@@ -206,7 +193,6 @@ document.querySelectorAll("form[data-form]").forEach((form) => {
     const data = new FormData(form);
     const lines = [];
     form.querySelectorAll(".field").forEach((field) => {
-      if (field.dataset.answer) return;
       const input = field.querySelector("input, textarea, select");
       const label = field.querySelector("label");
       if (input && label && input.value.trim()) {

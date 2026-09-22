@@ -11,6 +11,8 @@ drobecek: "Kontakt"
       <form class="form" data-form novalidate>
         <input type="hidden" name="access_key" value="{{ site.web3formsKey }}">
         <input type="hidden" name="subject" value="Zpráva z webu {{ site.name }}">
+        {#- Past na roboty (honeypot): člověk pole nevidí a nevyplní, robot ano
+             a Web3Forms takovou zprávu zahodí. Proto bez popisku a mimo tabulátor. -#}
         <input type="checkbox" name="botcheck" class="visually-hidden" tabindex="-1" autocomplete="off">
         <div class="form__row">
           <div class="field">
@@ -47,11 +49,6 @@ drobecek: "Kontakt"
           <label><input type="checkbox" name="souhlas" required> Souhlasím se <a href="{{ "/ochrana-osobnich-udaju/" | cesta }}">zpracováním osobních údajů</a></label>
         </fieldset>
         <div class="form__submit">
-          <div class="field field--captcha" data-captcha>
-            <label for="f-kontrola"><span data-captcha-question>6 + 13</span> =</label>
-            <input id="f-kontrola" name="kontrola" type="text" inputmode="numeric" required autocomplete="off">
-            <p class="field__error" aria-live="polite"></p>
-          </div>
           <button class="btn btn--primary btn--lg" type="submit">Odeslat</button>
         </div>
         <p class="form__status" role="status" aria-live="polite"></p>
