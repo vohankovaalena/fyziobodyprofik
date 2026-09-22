@@ -15,28 +15,31 @@ ogTitle: "Fyzio Body Prof.I.K – fyzioterapie a zdravý pohyb v Příbrami"
 {%- endmacro %}
 {% set casy = ["8:30", "9:00", "9:30", "10:00", "10:30", "11:00", "11:30", "12:00", "16:00", "16:30", "17:00", "17:30", "18:00", "18:30", "19:00", "19:30", "20:00", "20:30", "21:00"] %}
 
-<section class="home-hero">
-  {{ picture("hero-studio", "", "home-hero__bg", true) }}
-  <div class="wrap home-hero__inner">
-    <p class="home-hero__eyebrow">Fyzioterapie a zdravý pohyb v Příbrami</p>
-    <h1 class="home-hero__title">Fyzio Body Prof.I.K</h1>
-  </div>
-</section>
+{#- Fotka se táhne přes celý úvod včetně dlaždic, aby nikde nevznikla bílá mezera nad aktualitami. -#}
+<div class="home-top">
+  {{ picture("hero-studio", "", "home-top__bg", true) }}
+  <section class="home-hero">
+    <div class="wrap home-hero__inner">
+      <p class="home-hero__eyebrow">Fyzioterapie a zdravý pohyb v Příbrami</p>
+      <h1 class="home-hero__title">Fyzio Body Prof.I.K</h1>
+    </div>
+  </section>
 
-<nav class="tiles wrap" aria-label="Rychlé odkazy">
-  <a class="tile" href="{{ site.reservio.cviceni }}" data-reservio="cviceni">
-    <svg class="icon" aria-hidden="true"><use href="#i-run"/></svg><span>Rezervovat cvičení</span>
-  </a>
-  <a class="tile" href="{{ site.reservio.terapie }}" data-reservio="terapie">
-    <svg class="icon" aria-hidden="true"><use href="#i-lotus"/></svg><span>Objednat terapii</span>
-  </a>
-  <a class="tile" href="{{ "/aktuality/" | cesta }}">
-    <svg class="icon" aria-hidden="true"><use href="#i-megaphone"/></svg><span>Aktuality</span>
-  </a>
-  <a class="tile tile--accent" href="#rozvrh">
-    <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>Rozvrh lekcí</span>
-  </a>
-</nav>
+  <nav class="tiles wrap" aria-label="Rychlé odkazy">
+    <a class="tile" href="{{ site.reservio.cviceni }}" data-reservio="cviceni">
+      <svg class="icon" aria-hidden="true"><use href="#i-run"/></svg><span>Rezervovat cvičení</span>
+    </a>
+    <a class="tile" href="{{ site.reservio.terapie }}" data-reservio="terapie">
+      <svg class="icon" aria-hidden="true"><use href="#i-lotus"/></svg><span>Objednat terapii</span>
+    </a>
+    <a class="tile" href="{{ "/aktuality/" | cesta }}">
+      <svg class="icon" aria-hidden="true"><use href="#i-megaphone"/></svg><span>Aktuality</span>
+    </a>
+    <a class="tile tile--accent" href="#rozvrh">
+      <svg class="icon" aria-hidden="true"><use href="#i-calendar"/></svg><span>Rozvrh lekcí</span>
+    </a>
+  </nav>
+</div>
 
 <section class="news" id="aktuality" aria-labelledby="aktuality-nadpis">
   <div class="wrap news__inner" data-slider>

@@ -330,16 +330,12 @@ strong { font-weight: 600; }
 }
 
 /* ------------------------------------------------------------ 7. Hero */
-.home-hero {
+/* Fotka kryje úvod i dlaždice, takže obraz sahá bez mezery až k pruhu s aktualitami. */
+.home-top {
   position: relative;
   isolation: isolate;
-  min-height: clamp(26rem, 60vh, 36rem);
-  display: flex;
-  align-items: center;
-  color: var(--white);
-  padding-bottom: 6rem;
 }
-.home-hero__bg,
+.home-top__bg,
 .page-hero__bg {
   position: absolute;
   inset: 0;
@@ -348,12 +344,19 @@ strong { font-weight: 600; }
   height: 100%;
   object-fit: cover;
 }
-.home-hero::after {
+.home-top::after {
   content: "";
   position: absolute;
   inset: 0;
   z-index: -1;
   background: linear-gradient(90deg, rgb(35 45 55 / 0.55), rgb(35 45 55 / 0.15) 70%), linear-gradient(0deg, rgb(35 45 55 / 0.5), transparent 50%);
+}
+.home-hero {
+  min-height: clamp(18rem, 44vh, 26rem);
+  display: flex;
+  align-items: center;
+  color: var(--white);
+  padding-block: 2rem;
 }
 .home-hero__inner { padding-inline: clamp(0rem, 1.5vw, 1rem); }
 .home-hero__eyebrow {
@@ -413,13 +416,12 @@ strong { font-weight: 600; }
   z-index: 2;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  margin-top: -5rem;
   border-radius: var(--radius) var(--radius) 0 0;
   overflow: hidden;
   --wrap: 94rem;
 }
 @media (min-width: 48rem) {
-  .tiles { grid-template-columns: repeat(4, 1fr); margin-top: -7rem; }
+  .tiles { grid-template-columns: repeat(4, 1fr); }
 }
 .tile {
   display: flex;
