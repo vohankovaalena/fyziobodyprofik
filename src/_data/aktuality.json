@@ -1,27 +1,11 @@
 [
   {
-    "nadpis": "SM systém s Michaelem",
-    "podtitul": "nový kurz od 30.9. 4 lekce",
-    "foto": "aktualita-sm",
-    "text": "<p>Chcete se zbavit bolesti zad, zlepšit držení těla a cítit se ve svém těle silnější? Teď je ten správný čas začít! Rezervace přes naše Reservio (skupinové lekce).</p>",
-    "odkaz": "reservio",
-    "tlacitko": "Rezervace zde"
-  },
-  {
-    "nadpis": "Sound Ceremony - Zvuková lázeň",
-    "podtitul": "2.10. 18:00-20:00",
-    "foto": "aktualita-sound",
-    "text": "<p>Sound Ceremony je zvuková lázeň / meditace vedená zvukem. Vzniká zde posvátný prostor uvnitř nás, kde se můžeš na chvíli zastavit, uvolnit se, pustit každodenní starosti a svou pozornost věnovat vědomému naslouchání melodiím a zvukům.</p><p>V tomto prostoru může přicházet nadhled nad událostmi, které prožíváme, hlubší spojení s vlastní intuicí, uvolnění, relaxace nervového systému a vnitřní klid.</p><p class=\"news-card__strong\">Cena: 690 Kč</p>",
-    "odkaz": "https://fyzio-body-profik-skupinove-lekce.reservio.com/events/6a7381db-0a3e-4377-932d-c1d6337d6591",
-    "tlacitko": "Přihlášení zde"
-  },
-  {
-    "nadpis": "Aktivace tvé životní síly",
-    "podtitul": "4.10. od 10:30-12:30",
-    "foto": "aktualita-aktivace",
-    "text": "<p class=\"news-card__strong\">Objev sílu, která ti otevře cestu k tvému vysněnému životu.</p><p>Máte problémy se spánkem nebo úzkostmi?</p><p>Opakují se vám v životě stejné vzorce a toužíte po změně?</p><p>Chcete se hluboce napojit na své srdce a intuici?</p><p>Potřebujete se vyrovnat s minulými traumaty?</p><p>Pokud ano, tato technika je přesně pro vás.</p>",
-    "odkaz": "https://services.bookio.com/lucie-jezkova/widget?lang=cz",
-    "tlacitko": "Přihlášení zde"
+    "nadpis": "Měření cév",
+    "podtitul": "3.11.",
+    "foto": "aktualita-cevy",
+    "text": "<p>Orientační vyšetření, které zjišťuje pružnost cév, stav jejich průchodnosti, případně přítomnost usazených plátů a stav neurovegetativního systému.</p><p><strong>Za 30 minut zjistíte:</strong> stav vašich cév, jak jste ovlivněni stresem, rizika vzniku cukrovky, vysokého tlaku nebo cévní mozkové příhody.</p>",
+    "odkaz": "tel:+420731118442",
+    "tlacitko": "Rezervace: 731 118 442"
   },
   {
     "nadpis": "Společným dechem",
@@ -29,6 +13,31 @@
     "foto": "aktualita-dech",
     "text": "<p>Jedinečný pobyt, který spojí dech a fyzioterapii.</p><p class=\"news-card__strong\">S Karol, Ivkou a Jindřiškou.</p>",
     "odkaz": "https://docs.google.com/forms/d/e/1FAIpQLSdUu_2nxZo1plysEJ2MUHyyBufPQ_9rkcTv-fd8OU3rCzdodg/viewform",
+    "tlacitko": "Přihlášení zde"
+  },
+  {
+    "nadpis": "Harmonizace čtyř živlů a směrů s Ilonou Navrátilovou",
+    "podtitul": "Sobota 14.11. 10:00-14:00",
+    "foto": "aktualita-zivly",
+    "text": "<p>Projdeme meditací na čtyři světové směry, budeme vnímat a propojovat se s vlastním tělem a dechem. Propojíme se hlouběji k sobě, otočíme pozornost dovnitř.</p><p><strong>Aktivace životní energie (aktivace kundalini životní energie):</strong></p><ul><li>Snižuje stres a napětí</li><li>Rozpouští iluze oddělenosti</li><li>Hluboké léčení a detoxikace těla</li><li>Hluboké propojení se sebou</li><li>Srovnání obou hemisfér, pocit blaženosti, celistvosti, hlubší propojení s intuicí a se sebou</li></ul>",
+    "odkaz": "https://fyzio-body-profik-skupinove-lekce.reservio.com/events/f8beb3aa-b56f-49d3-97a8-e76c24acab32",
+    "tlacitko": "Přihlášení zde"
+  },
+  {
+    "nadpis": "Sound Ceremony - Zvuková lázeň",
+    "podtitul": "27.11. 17:30-20:00",
+    "foto": "aktualita-sound",
+    "text": "<p>Sound Ceremony je zvuková lázeň / meditace vedená zvukem. Vzniká zde posvátný prostor uvnitř nás, kde se můžeš na chvíli zastavit, uvolnit se, pustit každodenní starosti a svou pozornost věnovat vědomému naslouchání melodiím a zvukům.</p><p>V tomto prostoru může přicházet nadhled nad událostmi, které prožíváme, hlubší spojení s vlastní intuicí, uvolnění, relaxace nervového systému a vnitřní klid.</p><p class=\"news-card__strong\">Cena: 690 Kč</p>",
+    "odkaz": "https://fyzio-body-profik-skupinove-lekce.reservio.com/events/6a7381db-0a3e-4377-932d-c1d6337d6591",
+    "tlacitko": "Přihlášení zde"
+  },
+  {
+    "skryto": true,
+    "nadpis": "Aktivace tvé životní síly",
+    "podtitul": "4.10. od 10:30-12:30",
+    "foto": "aktualita-aktivace",
+    "text": "<p class=\"news-card__strong\">Objev sílu, která ti otevře cestu k tvému vysněnému životu.</p><p>Máte problémy se spánkem nebo úzkostmi?</p><p>Opakují se vám v životě stejné vzorce a toužíte po změně?</p><p>Chcete se hluboce napojit na své srdce a intuici?</p><p>Potřebujete se vyrovnat s minulými traumaty?</p><p>Pokud ano, tato technika je přesně pro vás.</p>",
+    "odkaz": "https://services.bookio.com/lucie-jezkova/widget?lang=cz",
     "tlacitko": "Přihlášení zde"
   }
 ]

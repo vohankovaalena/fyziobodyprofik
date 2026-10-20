@@ -51,7 +51,7 @@ ogTitle: "Fyzio Body Prof.I.K – fyzioterapie a zdravý pohyb v Příbrami"
       <ul class="news__list" role="list">
         {#- Všechny aktuality ze stránky Aktuality, střídají se po 5 s. Text je „nadpis – podtitul“,
             pokud aktualita nemá vlastní krátký text v poli „kratce“. -#}
-        {%- for a in aktuality %}
+        {%- for a in aktuality | rejectattr("skryto") %}
         <li class="news__item" data-slide>
           <p>{{ a.kratce or (a.nadpis + " – " + a.podtitul) }}</p>
           <a class="btn btn--primary btn--xs" href="{% if a.odkaz == 'reservio' %}{{ site.reservio.cviceni }}{% else %}{{ a.odkaz }}{% endif %}">{{ a.kratceTlacitko or a.tlacitko }}</a>

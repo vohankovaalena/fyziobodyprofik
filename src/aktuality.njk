@@ -12,9 +12,9 @@ drobecek: "Aktuality"
 <section class="section section--white news-page">
   <div class="wrap">
     <h1 class="news-page__title">Aktuálně ze studia</h1>
-    {#- Obsah karet je v _data/aktuality.json -#}
+    {#- Obsah karet je v _data/aktuality.json; položky se „skryto": true se nezobrazí -#}
     <ul class="news-cards" role="list">
-      {%- for a in aktuality %}
+      {%- for a in aktuality | rejectattr("skryto") %}
       <li class="news-card">
         {%- if a.foto %}{{ picture(a.foto, a.nadpis, "news-card__img") }}{% endif %}
         <h2 class="news-card__title">{{ a.nadpis }}</h2>

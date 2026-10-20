@@ -823,6 +823,7 @@ strong { font-weight: 600; }
 .news-card__text { font-size: var(--step--1); color: var(--muted); line-height: 1.85; }
 .news-card__text > * + * { margin-top: 0.9rem; }
 .news-card__text strong { color: var(--ink); font-weight: 500; }
+.news-card__text ul { padding-left: 1.2rem; }
 .news-card__cta { margin-top: auto; padding-top: 1rem; }
 .news-card__link { color: var(--brand); text-decoration: none; }
 .news-card__link:hover { text-decoration: underline; }
